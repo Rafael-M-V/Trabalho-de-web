@@ -9,22 +9,28 @@
 
 .main.container .searchbar {
 	position: fixed;
-	top: 20px;
+	top: 0;
 	bottom: 10;
-	right: 0;
-	left: 0;
+	right: 100;
+	left: 100;
 	
-	width: 500px;
-	height: 1px;
+	width: 1400px;
+	height: 70px;
 	
-	margin-left: 450px;
+	justify-content: center;
+	text-align: center;
+}
+
+.main.container .searchbar input{
+	width: 600px;
+	margin: 20px;
 }
 
 .main.container .sidebar {
 	position: fixed;
 	/*background-color: blue;*/
 	width: 200px;
-	top: 40px;
+	top: 100px;
 	left: 30px;
 	margin: auto;
 }
