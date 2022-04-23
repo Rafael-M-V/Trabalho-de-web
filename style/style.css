@@ -1,38 +1,42 @@
 *{
     box-sizing: border-box;
-    width: 100%;
     font-size: 15px;
     font-family: Carme, sans-serif;
-    background-color: #F0F0F0;
-
+    background-color: #FFFFFF;
 }
 
 
 .main.container .searchbar {
 	position: fixed;
 	top: 0;
-	bottom: 10;
-	right: 100;
-	left: 100;
-	
-	width: 1500px;
-	height: 70px;
+	left: 250px;
+	width: 100%;
 }
 
 .main.container .searchbar input{
 	width: 600px;
-	margin-left: 300px;
-	margin-top: 20px;
+	
+	margin-left: 5px;
+	
+	border: none;
+	
+	font-size: 17px;
+}
+
+.main.container .searchbar i{
+	margin-top: 50px;
+	margin-left: 100px;
 }
 
 .main.container .sidebar {
 	position: fixed;
 	/*background-color: blue;*/
 	width: 200px;
-	top: 100px;
+	height: 100%;
+	top: 0;
 	left: 30px;
 	margin: 0;
-	padding: 0;
+	padding-top: 100px;
 }
 
 .main.container .sidebar h3 {
@@ -65,6 +69,10 @@
 	background-color: #d4d4d4
 }
 
+.main.container .sidebar ul li:hover img{
+	background-color: #d4d4d4
+}
+
 .main.container .sidebar img {
 	width: 20px;
 	height: 20px;
@@ -72,7 +80,7 @@
 }
 
 .product-window {
-	margin-left: 250px;
+	margin-left: 225px;
 	margin-top: 100px;
 	width: 1000px;
 }
