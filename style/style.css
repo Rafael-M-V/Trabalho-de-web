@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     font-size: 15px;
     font-family: Carme, sans-serif;
@@ -93,8 +93,8 @@
     height: 350px;
     display: inline-block;
     background-color: blue;
-    margin: 3px;
-    border: 1px solid #ccc;
+    margin: 8px;
+    box-shadow: 2px 1px 4px #aaa;
     border-radius: 6px;
     background-position: center;
     /*background-size: 90%;*/
@@ -118,44 +118,57 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 10px;
-    background-color: #fffd;
+    padding: 14px;
+    background-color: #fffc;
     border-radius: 0 0 6px 6px;
+    backdrop-filter: blur(8px);
+    color: #4c4c4c;
 }
 
-.product-description b, .product-description div, .product-description em {
+.product-description > a {
+    color: inherit;
+}
+
+.product-description b, .product-description div, .product-description span {
     background-color: transparent;
 }
 
 .product-price {
-    float: right;
+    float: left;
     font-weight: bold;
-    color: #855;
+    color: #5a5;
 }
 
 .product-vendor {
-    color: #bbb;
+    color: #888;
+    font-size: 0.9em;
 }
 
 .product-vendor a {
     color: inherit;
     font-weight: bold;
+    font-size: inherit;
 }
 
 .product-add-to-cart-button {
     position: absolute;
+    min-width: 24px;
+    max-width: 96%;
+    /*height: 24px;*/
     top: 0;
-    margin: 4px 0 0 4px;
+    right: 2%;
+    padding: 0 8px;
+    margin: 2% 0 0 2%;
     border: none;
     color: #66f;
-    font-size: 1.2em;
+    text-align: left;
+    font-size: 1.25em;
     background-color: #fffa;
     border-radius: 4px;
-    transition: all 3s;
 }
 
-.product-add-to-cart-button:hover:after {
-    content: ' adicionar ao carrinho';
+.product-add-to-cart-button:hover:before {
+    content: 'adicionar ao carrinho ';
 }
 .product-table{
 	text-align: center;
