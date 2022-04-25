@@ -1,0 +1,119 @@
+.cart-window {
+    margin: 10% 0 15% 0;
+}
+
+.cart-item {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    display: table;
+    /*background: blue;*/
+    /*border: 2px solid #000;*/
+    box-shadow: 2px 1px 6px #ccc;
+    border-radius: 6px;
+}
+
+.cart-product-info {
+    width: 80%;
+    float: left;
+    margin: 10px;
+    /*border: 2px solid #000;*/
+}
+
+.cart-product-info img {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    /*border: 2px solid #000;*/
+}
+
+.cart-product-info b, .cart-product a, .cart-product div, .cart-product span {
+    background-color: transparent;
+}
+
+.cart-product-description {
+    margin-top: 2px;
+    margin-left: 120px;
+}
+
+.cart-product-amount {
+    float: right;
+    margin: 4% 2% 0 0;
+    /*border: 2px solid #000;*/
+}
+
+.cart-product-amount-control {
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+.cart-product-amount-control button {
+    width: 15px;
+    margin: 0;
+    padding: 0;
+    color: #07f;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.cart-product-amount-control input[type=number] {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    border: none;
+    text-align: center;
+    color: #444;
+}
+
+.cart-product-amount button, .cart-product-amount input[type=number] {
+}
+
+.cart-product-amount-control input[type=number]::-webkit-inner-spin-button, 
+.cart-product-amount-control input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.cart-product-price, .cart-calc-price {
+    color: #5a5;
+    font-weight: bold;
+}
+
+.cart-calc-price {
+    float: right;
+    margin: 10px 0;
+}
+
+.cart-summary {
+    float: right;
+    min-width: 25%;
+    margin: 10px 0;
+    padding: 10px;
+    /*border: 2px solid #000;*/
+    /*border-radius; 6px;*/
+    /*box-shadow: 2px 2px 4px #ccc;*/
+    color: #6c6c6c;
+}
+
+.cart-value {
+    margin: 0;
+    float: right;
+    text-align: right;
+    font-weight: bold;
+}
+
+.cart-summary button {
+    width: 100px;
+    height: 40px;
+    margin-top: 25px;
+    float: right;
+    border: none;
+    background-color: #07f;
+    color: #efefef;
+    font-weight: bold;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px #ccc;
+    text-shadow: 2px 1px #5c5c5c;
+}
