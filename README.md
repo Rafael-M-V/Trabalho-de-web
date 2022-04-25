@@ -15,3 +15,5 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 [24/04/2022]
 
 No momento nosso projeto está na fase de mockup. Projetamos a aparência das páginas e determinamos como vai ser a transição entre elas. O diagrama de navegação está na pasta 'diagrama'.
+
+O link para os mockups está aqui: https://www.figma.com/file/9wueKeLP0BctFijlwJ0Hgq/Supermercado-Feliz
