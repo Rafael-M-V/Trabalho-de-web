@@ -14,4 +14,4 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 # Andamento
 [24/04/2022]
 
-No momento nosso projeto está na fase de mockup. Projetamos a aparência das páginas e determinamos como vai ser a transição entre elas. O diagrama de navegação e os mockups estão na pasta 'mockup'.
+No momento nosso projeto está na fase de mockup. Projetamos a aparência das páginas e determinamos como vai ser a transição entre elas. O diagrama de navegação está na pasta 'diagrama'.
