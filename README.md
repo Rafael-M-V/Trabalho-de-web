@@ -6,7 +6,7 @@ Lucas Xavier Leite - 10783347
 
 Rafael Meliani Velloso - 4165457
 
-Vinicius Finke Raiter José - 
+Vinicius Finke Raiter José - 9791052
 
 # Descrição
 Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
