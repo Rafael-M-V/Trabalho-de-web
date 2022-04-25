@@ -1,4 +1,4 @@
-# Trabalho-de-web
+# Supermercado Feliz
 Trabalho da disciplina de Introdução ao desenvolvimento web (2022)
 
 # Autores
