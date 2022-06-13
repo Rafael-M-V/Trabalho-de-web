@@ -1,0 +1,52 @@
+.AddToCart {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--bg-color-darkest);
+    /* border: 1px solid var(--primary-color); */
+    background-color: var(--bg-color-lightest);
+    z-index: 2;
+}
+
+.AddToCart.AddToCartStandardSize {
+    width: 100px;
+}
+
+.AddToCart.AddToCartFitSize {
+    width: 100%;
+    height: 100%;
+}
+
+.AddToCart-amount {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.35em;
+    color: var(--neutral-color);
+}
+
+.AddToCartColumns > .AddToCart-amount {
+    margin: 8px 0;
+}
+
+.AddToCartRows > .AddToCart-amount {
+    margin: 0 8px;
+}
+
+.AddToCart-increase, .AddToCart-decrease {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.AddToCart-increase img, .AddToCart-decrease img {
+    width: 80%;
+    height: 80%;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
