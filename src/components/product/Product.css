@@ -1,0 +1,99 @@
+@import '/src/Global.css';
+
+:root {
+    --price-text-color: #00aa00;
+}
+
+.Product {
+    position: relative;
+    min-width: 200px;
+    min-height: 240px;
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: var(--bg-color-lightest);
+    box-shadow: 3px 4px 2px var(--bg-color-darkest);
+    cursor: pointer;
+}
+
+.Product:hover {
+    box-shadow: 0 0 8px 4px var(--bg-color-darkest);
+}
+
+.Product-add-to-cart {
+    position: absolute;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    background-color: var(--bg-color-darkest);
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 100ms ease;
+}
+
+.Product-add-to-cart img {
+    width: 80%;
+    height: 80%;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Product-add-to-cart:hover {
+    opacity: 1;
+}
+
+.Product-image {
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.Product-image img {
+    width: 132px;
+    height: 132px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.Product-info {
+    padding-top: 10px;
+    border-top: 1px solid var(--bg-color-darkest);
+}
+
+.Product-name {
+    font-size: 12pt;
+    color: var(--neutral-color);
+    cursor: pointer;
+}
+
+.Product-price, .Product-price-discount, .Product-price-original {
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.Product-price {
+    color: var(--neutral-color);
+}
+
+.Product-price-discount {
+    color: var(--primary-color);
+    /* color: var(--price-text-color); */
+}
+
+.Product-price-original {
+    color: var(--neutral-color-lighter);
+    margin-left: 8px;
+    text-decoration: line-through;
+}
+
+.Product-discount {
+    margin-left: 8px;
+    padding: 2px 6px;
+    font-size: 9pt;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10%;
+    background-color: var(--primary-color);
+    /* background-color: var(--price-text-color); */
+    color: var(--bg-color-lightest);
+}

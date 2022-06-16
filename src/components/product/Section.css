@@ -1,0 +1,75 @@
+@import '/src/Global.css';
+
+.Section {
+    position: relative;
+}
+
+.Section-content {
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    overflow: hidden;
+    flex: auto;
+}
+
+.Section-content > .Product:first-child {
+    margin-left: 0;
+}
+
+.Section-header {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--neutral-color);
+}
+
+.Section-left-arrow, .Section-right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: var(--bg-color-darkest);
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity 100ms ease;
+    cursor: pointer;
+}
+
+.Section-left-arrow:hover, .Section-right-arrow:hover {
+    opacity: 1;
+}
+
+.Section-left-arrow img, .Section-right-arrow img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.Section-left-arrow {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.Section-left-arrow img {
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Section-right-arrow {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.Section-right-arrow img {
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
