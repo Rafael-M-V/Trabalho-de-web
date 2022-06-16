@@ -1,10 +1,38 @@
 :root {
     --primary-color: #aad400;
+    --primary-color-hover: #88a807;
     --secondary-color: #e5ff80;
     --neutral-color: #333333;
+    --neutral-color-light: #6e6e6e;
     --neutral-color-lighter: #bebebe;
+    --neutral-color-lightest: #fcfcfc;
     --bg-color: #f9f9f9;
     --bg-color-lightest: #ffffff;
     --bg-color-darker: #f2f2f2;
-    --bg-color-darkest: #e6e6e6ff;
+    --bg-color-darkest: #e6e6e6;
+    --pop-up-overlay-color: #3e3e3eaa;
+}
+
+::selection {
+    color: var(--neutral-color-lightest);
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--neutral-color-lighter);
+    transition: background-color 100ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--neutral-color-light);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: var(--bg-color-lightest);
 }

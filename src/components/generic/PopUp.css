@@ -1,0 +1,55 @@
+@import '/src/Global.css';
+
+.PopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--pop-up-overlay-color);
+    z-index: 10;
+}
+
+.PopUp-container {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.PopUp-header {
+    width: 100%;
+    display: table;
+    background-color: var(--bg-color-lightest);
+    color: var(--neutral-color);
+}
+
+.PopUp-header h2 {
+    float: left;
+    margin: 20px;
+}
+
+.PopUp-close-button {
+    float: right;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.PopUp-close-button img {
+    width: 28px;
+    height: 28px;
+}
+
+.PopUp-content {
+    max-height: 80vh;
+    padding: 50px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+}

@@ -7,7 +7,7 @@
 .Product {
     position: relative;
     min-width: 200px;
-    min-height: 240px;
+    min-height: 250px;
     margin: 5px;
     padding: 10px;
     box-sizing: border-box;
@@ -21,9 +21,14 @@
     box-shadow: 0 0 8px 4px var(--bg-color-darkest);
 }
 
-.Product-add-to-cart {
+.Product-add-to-cart-container {
     position: absolute;
     right: 5px;
+}
+
+.Product-add-to-cart {
+    position: absolute;
+    right: 50%;
     width: 32px;
     height: 32px;
     background-color: var(--bg-color-darkest);
@@ -61,13 +66,13 @@
 }
 
 .Product-name {
-    font-size: 12pt;
+    font-size: 1em;
     color: var(--neutral-color);
     cursor: pointer;
 }
 
-.Product-price, .Product-price-discount, .Product-price-original {
-    font-size: 11pt;
+.Product-price-container {
+    font-size: 0.9em;
     font-weight: bold;
 }
 
@@ -89,8 +94,6 @@
 .Product-discount {
     margin-left: 8px;
     padding: 2px 6px;
-    font-size: 9pt;
-    font-weight: bold;
     text-align: center;
     border-radius: 10%;
     background-color: var(--primary-color);
