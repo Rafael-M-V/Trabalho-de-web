@@ -7,14 +7,14 @@ import './SectionTest.css';
 const SectionTest = () => {
     return (
         <div className="SectionTest">
-            <div className='SectionTest-sidebar'>
+            {/* <div className='SectionTest-sidebar'>
                 <ul>
                     <li>Perecíveis</li>
                     <li>Não perecíveis</li>
                     <li>Limpeza</li>
                     <li>Higiene</li>
                 </ul>
-            </div>
+            </div> */}
             <div className='SectionTest-container'>
                 <Section name='Em oferta' products={productsData} />
                 <Section name='Mais buscados' products={productsData} />

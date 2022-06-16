@@ -31,16 +31,16 @@ const Section = ({ name, products }) => {
     }
 
     return (
-        <>
+        <section>
             <h1 className='Section-header'>{name}</h1>
             <div className='Section'>
                 <span className='Section-left-arrow' onClick={slideLeft}><img src={leftArrowIcon} alt='Mover para a esquerda'/></span>
                 <span className='Section-content' ref={ref}>
-                    {products.map(p => <Product key={p.id} name={p.name} img={p.img} price={p.price} discount={p.discount}/>)}
+                    {products.map(p => <Product key={p.id} name={p.name} image={p.image} price={p.price} discount={p.discount}/>)}
                 </span>
                 <span className='Section-right-arrow' onClick={slideRight}><img src={rightArrowIcon} alt='Mover para a direita'/></span>
             </div>
-        </>
+        </section>
     );
 }
  

@@ -3,7 +3,10 @@ import React from 'react';
 import './PopUp.css'
 import closeSign from './icons/close.png'
 
-const PopUp = ({ title, content, setOpen }) => {
+const PopUp = (props) => {
+    const title = props.title
+    const setOpen = props.setOpen
+    
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '10px';
 
@@ -23,7 +26,7 @@ const PopUp = ({ title, content, setOpen }) => {
                     </span>
                 </div>
                 <div className='PopUp-content'>
-                    {content}
+                    {props.children}
                 </div>
             </div>
         </div>
