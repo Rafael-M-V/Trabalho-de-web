@@ -6,11 +6,14 @@
     --neutral-color-light: #6e6e6e;
     --neutral-color-lighter: #bebebe;
     --neutral-color-lightest: #fcfcfc;
+    --neutral-color-darkest: #000000;
     --bg-color: #f9f9f9;
     --bg-color-lightest: #ffffff;
     --bg-color-darker: #f2f2f2;
     --bg-color-darkest: #e6e6e6;
     --pop-up-overlay-color: #3e3e3eaa;
+
+    --sidebar-width: 15vw;
 }
 
 ::selection {

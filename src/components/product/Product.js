@@ -11,7 +11,7 @@ const Product = ({ ...props }) => {
     const [open, setOpen] = useState(false)
 
     const name = props.name
-    const img = props.img
+    const image = props.image
     const price = props.price
     const discount = props.discount
 
@@ -33,7 +33,7 @@ const Product = ({ ...props }) => {
 
     return (
         <>
-            <div className='Product' onClick={openPopUp}>
+            <article className='Product' onClick={openPopUp}>
                 <span className='Product-add-to-cart-container'>
                     {cartAmount === 0
                         ? <span className='Product-add-to-cart' onClick={addToCart}>
@@ -42,7 +42,7 @@ const Product = ({ ...props }) => {
                         : <AddToCart cartAmount={cartAmount} setCartAmount={setCartAmount} size='standard'/>
                     }
                 </span>
-                <div className='Product-image'><img src={img} alt={name}/></div>
+                <div className='Product-image'><img src={image} alt={name}/></div>
                 <div className='Product-info'>
                     <div className='Product-name'>{name}</div>
                     <div className='Product-price-container'>
@@ -56,7 +56,7 @@ const Product = ({ ...props }) => {
                         }
                     </div>
                 </div>
-            </div>
+            </article>
             {open && <ProductPopUp setOpen={setOpen} productData={props} cartAmount={cartAmount} setCartAmount={setCartAmount} />}
         </>
     );
