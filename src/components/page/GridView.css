@@ -1,0 +1,7 @@
+@import '/src/Global.css';
+
+.GridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

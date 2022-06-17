@@ -1,0 +1,24 @@
+@import '/src/Global.css';
+
+.SearchResults {
+    position: relative;
+    color: var(--neutral-color);
+    /* margin: 50% 0 0 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+
+.SearchResults > img {
+    position: absolute;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+    max-height: 500px;
+    animation: sad-face 60s ease-in-out 1s infinite;
+}
+
+@keyframes sad-face {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(360deg); }
+}

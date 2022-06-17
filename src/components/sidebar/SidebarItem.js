@@ -4,11 +4,8 @@ import './SidebarItem.css'
 
 const SidebarItem = ({ name, icon, active, targetIndex, action }) => {
     return (
-        // <span className={`SidebarItem ${active ? 'active' : ''}`} onClick={click}>
-        <span className={`SidebarItem ${active ? 'active' : ''}`} onClick={() => action(targetIndex)}>
-            {/* <span className={`SidebarItem-name ${active ? 'active' : ''}`}> */}
-                {name}
-            {/* </span> */}
+        <span className={`SidebarItem ${active ? 'active' : ''}`} onClick={() => action(targetIndex)} onKeyDown={(e) => e.key === 'Enter' && action(targetIndex)} tabIndex='0'>
+            {name}
         </span>)
     ;
 }
