@@ -1,19 +1,19 @@
 import React from 'react';
+import IconButton from './IconButton';
+import { ReactComponent as CloseIcon } from './icons/svg/min/close.svg';
 
-import './PopUp.css'
-import closeSign from './icons/close.png'
+import './PopUp.css';
 
 const PopUp = (props) => {
     const title = props.title
     const setOpen = props.setOpen
-    
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '10px';
+
+    const scrollFixClass = 'PopUp-hide-scrollbar-fix'
+    document.body.classList.add(scrollFixClass)
 
     const close = () => {
         setOpen(false)
-        document.body.style.overflow = 'unset'
-        document.body.style.paddingRight = '0'
+        document.body.classList.remove(scrollFixClass)
     }
 
     return (
@@ -21,8 +21,8 @@ const PopUp = (props) => {
             <div className='PopUp-container'>
                 <div className='PopUp-header'>
                     <h2>{title}</h2>
-                    <span className='PopUp-close-button' onClick={close}>
-                        <img src={closeSign} alt='Fechar'/>
+                    <span className='PopUp-close-button'>
+                        <IconButton action={close}><CloseIcon /></IconButton>
                     </span>
                 </div>
                 <div className='PopUp-content'>

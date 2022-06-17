@@ -25,28 +25,12 @@
 
 .AddToCart-amount {
     text-align: center;
-    vertical-align: middle;
     font-size: 1.35em;
     color: var(--neutral-color);
-}
-
-.AddToCartColumns > .AddToCart-amount {
-    margin: 8px 0;
-}
-
-.AddToCartRows > .AddToCart-amount {
-    margin: 0 8px;
 }
 
 .AddToCart-increase, .AddToCart-decrease {
     width: 24px;
     height: 24px;
     cursor: pointer;
-}
-
-.AddToCart-increase img, .AddToCart-decrease img {
-    width: 80%;
-    height: 80%;
-    margin: 50% 0 0 50%;
-    transform: translate(-50%, -50%);
 }

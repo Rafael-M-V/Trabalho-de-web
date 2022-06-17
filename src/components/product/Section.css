@@ -31,8 +31,8 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,28 +48,12 @@
     opacity: 1;
 }
 
-.Section-left-arrow img, .Section-right-arrow img {
-    display: block;
-    width: 24px;
-    height: 24px;
-}
-
 .Section-left-arrow {
     left: 0;
-    transform: translate(-50%, -50%);
-}
-
-.Section-left-arrow img {
-    margin: 50% 0 0 50%;
     transform: translate(-50%, -50%);
 }
 
 .Section-right-arrow {
     right: 0;
     transform: translate(50%, -50%);
-}
-
-.Section-right-arrow img {
-    margin: 50% 0 0 50%;
-    transform: translate(-50%, -50%);
 }

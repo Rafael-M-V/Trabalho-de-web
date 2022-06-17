@@ -1,8 +1,9 @@
 import React from 'react';
+import IconButton from '../generic/IconButton';
 import Product from '../product/Product';
+import { ReactComponent as SearchIcon } from './icons/svg/min/search.svg';
 
 import './SearchBar.css'
-import searchIcon from './icons/search.png'
 
 const SearchBar = ({ items, setSearchTerm, setResults, setCurrentPage, searchFor = 'Product' }) => {
     const normalize = str => str.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
@@ -32,7 +33,9 @@ const SearchBar = ({ items, setSearchTerm, setResults, setCurrentPage, searchFor
 
     return (
         <span className='SearchBar'>
-            <img src={searchIcon} alt='Buscar'/>
+            <span className='SearchBar-icon'>
+                <IconButton><SearchIcon /></IconButton>
+            </span>
             <input type='text' onKeyDown={search} placeholder={placeholders[searchFor]}/>
         </span>
     );
