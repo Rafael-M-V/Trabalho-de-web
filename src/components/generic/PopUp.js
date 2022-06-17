@@ -1,8 +1,8 @@
 import React from 'react';
 import IconButton from './IconButton';
-import { ReactComponent as CloseIcon } from './icons/svg/min/close.svg';
 
 import './PopUp.css';
+import { ReactComponent as CloseIcon } from './icons/close.svg';
 
 const PopUp = (props) => {
     const title = props.title

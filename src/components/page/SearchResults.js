@@ -2,7 +2,7 @@ import React from 'react'
 import GridView from './GridView'
 
 import './SearchResults.css'
-import notFoundIcon from './icons/not-found.png'
+import notFoundIcon from './icons/not-found.svg'
 
 const SearchResults = (props) => {
     const searchTerm = props.searchTerm

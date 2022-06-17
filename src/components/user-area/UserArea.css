@@ -1,0 +1,37 @@
+@import '/src/Global.css';
+
+.UserArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.UserArea-item {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    /* border-radius: 50%; */
+    /* background-color: var(--primary-color); */
+    /* background-color: var(--bg-color-darkest); */
+    transition: stroke fill 100ms ease-in-out;
+    cursor: pointer;
+}
+
+/* .UserArea-item svg path {
+    fill: #fff !important;
+    stroke: #fff !important;
+} */
+
+.UserArea-item:hover svg > path {
+    stroke: var(--primary-color-highlight-dark) !important;
+    fill: var(--primary-color-highlight-dark) !important;
+    /* stroke: var(--secondary-color) !important;
+    fill: var(--secondary-color) !important; */
+}
+
+.UserArea-login-button {
+    width: 100px;
+    height: 40px;
+}

@@ -4,7 +4,7 @@ import AddToCart from './AddToCart';
 import IconButton from '../generic/IconButton';
 
 import './Product.css';
-import { ReactComponent as AddSign} from './icons/svg/min/add-sign.svg';
+import { ReactComponent as AddSign} from './icons/add-sign.svg';
 
 const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import IconButton from '../generic/IconButton';
 import Product from '../product/Product';
-import { ReactComponent as SearchIcon } from './icons/svg/min/search.svg';
 
-import './SearchBar.css'
+import './SearchBar.css';
+import { ReactComponent as SearchIcon } from './icons/search.svg';
 
 const SearchBar = ({ items, setSearchTerm, setResults, setCurrentPage, searchFor = 'Product' }) => {
     const normalize = str => str.trim().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()

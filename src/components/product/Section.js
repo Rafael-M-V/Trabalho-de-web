@@ -3,8 +3,8 @@ import Product from './Product';
 import IconButton from '../generic/IconButton';
 
 import './Section.css';
-import { ReactComponent as LeftArrowIcon } from './icons/svg/min/left-arrow.svg';
-import { ReactComponent as RightArrowIcon } from './icons/svg/min/right-arrow.svg';
+import { ReactComponent as LeftArrowIcon } from './icons/left-arrow.svg';
+import { ReactComponent as RightArrowIcon } from './icons/right-arrow.svg';
 
 const Section = ({ name, products }) => {
     let page = 0
