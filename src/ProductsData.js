@@ -103,6 +103,13 @@ const productsData = [
         price: 6.98,
         discount: 0.20
     },
+    {
+        id: 16,
+        name: 'Pasta de dente',
+        image: banana,
+        price: 6.98,
+        discount: 0.20
+    },
 ]
 
 export default productsData;

@@ -3,17 +3,6 @@
 .App {
 }
 
-.App-header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid var(--bg-color-darker);
-    background-color: var(--bg-color-lightest);
-    color: var(--neutral-color);
-}
-
 .App-main-wrapper {
     position: relative;
     margin: 0;
@@ -22,5 +11,4 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    background-color: blue;
 }

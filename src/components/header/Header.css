@@ -1,0 +1,15 @@
+@import '/src/Global.css';
+
+.Header {
+    position: relative;
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 2px solid var(--bg-color-darker);
+    background-color: var(--bg-color-lightest);
+    color: var(--neutral-color);
+}
