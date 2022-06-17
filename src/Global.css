@@ -1,6 +1,9 @@
 :root {
     --primary-color: #aad400;
-    --primary-color-hover: #88a807;
+    --primary-color-rgb: 170, 212, 0;
+    --primary-color-hsl: 72, 100%;
+    --primary-color-highlight: rgba(var(--primary-color-rgb), 0.5);
+    --primary-color-highlight-dark: hsl(var(--primary-color-hsl), 32%);
     --secondary-color: #e5ff80;
     --neutral-color: #333333;
     --neutral-color-light: #6e6e6e;
@@ -14,6 +17,7 @@
     --pop-up-overlay-color: #3e3e3eaa;
 
     --sidebar-width: 15vw;
+    --scrollbar-width: 0.6vw;
 }
 
 ::selection {
@@ -22,13 +26,13 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: var(--scrollbar-width);
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: var(--neutral-color-lighter);
-    transition: background-color 100ms ease;
+    transition: background-color 2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {

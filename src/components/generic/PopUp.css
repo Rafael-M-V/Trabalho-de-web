@@ -37,13 +37,10 @@
 
 .PopUp-close-button {
     float: right;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.PopUp-close-button img {
     width: 28px;
     height: 28px;
+    margin: 20px;
+    cursor: pointer;
 }
 
 .PopUp-content {
@@ -52,4 +49,9 @@
     box-sizing: border-box;
     overflow-y: auto;
     background-color: var(--bg-color);
+}
+
+.PopUp-hide-scrollbar-fix {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width);
 }

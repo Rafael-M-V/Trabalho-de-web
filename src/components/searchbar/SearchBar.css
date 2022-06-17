@@ -18,7 +18,7 @@
     box-shadow: 0 0 1px 2px var(--bg-color-darkest);
 }
 
-.SearchBar img {
+.SearchBar-icon {
     max-height: 34px;
     max-width: 34px;
     margin: 2%;

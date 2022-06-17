@@ -38,13 +38,6 @@
     transition: opacity 100ms ease;
 }
 
-.Product-add-to-cart img {
-    width: 80%;
-    height: 80%;
-    margin: 50% 0 0 50%;
-    transform: translate(-50%, -50%);
-}
-
 .Product-add-to-cart:hover {
     opacity: 1;
 }

@@ -1,0 +1,12 @@
+@import '/src/Global.css';
+
+.IconButton svg {
+    width: 85%;
+    height: 85%;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
+
+.IconButton svg > path {
+    fill: var(--primary-color) !important;
+}
