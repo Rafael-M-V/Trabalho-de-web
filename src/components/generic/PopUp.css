@@ -7,7 +7,7 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--pop-up-overlay-color);
-    z-index: 10;
+    z-index: 10;    
 }
 
 .PopUp-container {
@@ -21,6 +21,7 @@
     max-height: 90vh;
     overflow: hidden;
     border-radius: 10px;
+    outline: 0;
 }
 
 .PopUp-header {

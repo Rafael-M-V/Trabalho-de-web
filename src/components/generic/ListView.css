@@ -1,0 +1,7 @@
+@import '/src/Global.css';
+
+.ListView {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}

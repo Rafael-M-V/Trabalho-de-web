@@ -1,23 +1,23 @@
 import React from 'react';
 import PopUp from '../generic/PopUp';
+import { formatCurrency } from './Product';
 import AddToCart from './AddToCart';
-
-import './ProductPopUp.css'
-import './Product.css'
 import Button from '../generic/Button';
 
-const ProductPopUp = ({ productData, setOpen, cartAmount, setCartAmount }) => {
+import './ProductPopUp.css';
+import './Product.css';
+
+const ProductPopUp = ({ productData, setOpen, recursive = false, cartAmount, setCartAmount }) => {
     const productName = productData.name
     const productImage = productData.image
     const productPrice = productData.price
     const productDiscount = productData.discount
 
-    const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
     const localePrice = formatCurrency(productPrice);
     const discountedPrice = productPrice * (1 - productDiscount);
 
     return (
-        <PopUp setOpen={setOpen} title={productName}>
+        <PopUp setOpen={setOpen} title={productName} recursive={recursive}>
             <div className='ProductPopUp'>
                 <div className='ProductPopUp-image'><img src={productImage} alt={productName}/></div>
                 <div className='ProductPopUp-info'>

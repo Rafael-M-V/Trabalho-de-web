@@ -8,6 +8,7 @@
 }
 
 .UserArea-item {
+    position: relative;
     display: inline-block;
     width: 48px;
     height: 48px;
@@ -34,4 +35,17 @@
 .UserArea-login-button {
     width: 100px;
     height: 40px;
+}
+
+.UserArea-item-show::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    /* bottom: 100%; */
+    /* top: 60%; */
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border: 15px solid transparent;
+    border-bottom: 15px solid var(--primary-color-highlight);
 }

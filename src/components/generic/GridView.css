@@ -1,6 +1,6 @@
 @import '/src/Global.css';
 
-.GridContainer {
+.GridView {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

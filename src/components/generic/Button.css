@@ -2,18 +2,20 @@
 
 .Button {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
     border-radius: 5px;
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
     color: var(--neutral-color-lightest);
     background-color: var(--primary-color);
     cursor: pointer;
     transition: background-color 100ms ease;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .Button.ButtonStandardSize {
