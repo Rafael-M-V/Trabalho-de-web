@@ -29,6 +29,7 @@ const UserMenu = ({ setOpen }) => {
             <div className='UserMenu'>
                 <ListView direction='column'>
                     {popUps.map((p, i) => <span key={i} className='UserMenu-item' onClick={() => { setCurrentPopUp(i); setOpenPopUp(true) }}>{p.title}</span>)}
+                    <span className='UserMenu-item'>Sair</span>
                 </ListView>
             </div>
             {openPopUp && popUps[currentPopUp].popUp}
