@@ -1,0 +1,21 @@
+@import '/src/Global.css';
+
+.UserMenu {
+    font-size: 1.1em;
+    font-weight: 300;
+    text-transform: lowercase;
+    color: var(--neutral-color);
+}
+
+.UserMenu-item {
+    padding: 20px;
+    margin: 5px 0;
+    text-align: left;
+    box-shadow: inset 5px 5px 5px var(--bg-color);
+    cursor: pointer;
+    transition: border-left 100ms ease-in;
+}
+
+.UserMenu-item:hover {
+    border-left: 5px solid var(--primary-color);
+}

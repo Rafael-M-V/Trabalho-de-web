@@ -1,9 +1,13 @@
 import React from 'react';
 
-import './Sidebar.css'
+import './Sidebar.css';
 
-const Sidebar = (props) => {
-    return <nav className='Sidebar'>{props.children} </nav>
+const Sidebar = ({ children }) => {
+    return (
+        <nav className='Sidebar'>
+            {children}
+        </nav>
+    )
 }
  
 export default Sidebar;

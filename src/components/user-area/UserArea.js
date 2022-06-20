@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import IconButton from '../generic/IconButton';
 import Button from '../generic/Button';
 import ShoppingCart from './ShoppingCart';
+import UserMenu from './UserMenu';
 
 import './UserArea.css';
 import { ReactComponent as CartIcon } from './icons/cart.svg';
@@ -33,7 +34,7 @@ const UserArea = () => {
                 </span>
             )}
             {openCart && <ShoppingCart setOpen={setOpenCart} />}
-            {/* {openUserMenu && <UserMenu setOpen={setOpenUserMenu} />} */}
+            {openUserMenu && <UserMenu setOpen={setOpenUserMenu} />}
         </div>
     );
 }
