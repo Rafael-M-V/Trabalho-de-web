@@ -1,13 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import IconButton from './IconButton';
-import { ReactComponent as CloseIcon } from './icons/svg/min/close.svg';
 
 import './PopUp.css';
+import { ReactComponent as CloseIcon } from './icons/close.svg';
 
-const PopUp = (props) => {
-    const title = props.title
-    const setOpen = props.setOpen
-
+const PopUp = ({ children, title, setOpen, recursive = false }) => {
     const scrollFixClass = 'PopUp-hide-scrollbar-fix'
     document.body.classList.add(scrollFixClass)
 
@@ -16,7 +14,7 @@ const PopUp = (props) => {
         document.body.classList.remove(scrollFixClass)
     }
 
-    return (
+    const popup = (
         <div className='PopUp'>
             <div className='PopUp-container'>
                 <div className='PopUp-header'>
@@ -26,11 +24,20 @@ const PopUp = (props) => {
                     </span>
                 </div>
                 <div className='PopUp-content'>
-                    {props.children}
+                    {children}
                 </div>
             </div>
         </div>
-    );
+    )
+
+    // const ref = useRef()
+    // useEffect(() => ReactDOM.findDOMNode(ref.current).focus(), [])
+    // <div className='PopUp-container' tabIndex={-1} ref={ref} onBlur={close}>
+
+    // return 
+    return recursive
+        ? ReactDOM.createPortal(popup, document.getElementById('root'))
+        : popup
 }
  
 export default PopUp;

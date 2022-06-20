@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
@@ -24,6 +24,10 @@ const App = () => {
     const [searchResults, setSearchResults] = useState(null)
     const [searchTerm, setSearchTerm] = useState('')
     const searchResultsPage = <SearchResults searchTerm={searchTerm}>{searchResults}</SearchResults>
+
+    // useEffect(() => {
+    //     localStorage.setItem('cart', '[]')
+    // }, [])
 
     const pages = [
         {

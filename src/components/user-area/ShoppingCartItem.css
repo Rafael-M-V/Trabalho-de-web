@@ -1,0 +1,37 @@
+.ShoppingCartItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 1px 0; */
+    padding: 2px 10px;
+    border-top: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    border-bottom: 1px solid var(--bg-color);
+    border-left: 5px solid var(--primary-color);
+    background-color: var(--bg-color-lightest);
+    cursor: pointer;
+}
+
+.ShoppingCartItem.ShoppingCartItem-read-only {
+    cursor: not-allowed;
+}
+
+.ShoppingCartItem-text {
+    color: var(--neutral-color);
+}
+
+.ShoppingCartItem-image {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: var(--bg-color-darker);
+}
+
+.ShoppingCartItem img {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}

@@ -14,7 +14,8 @@ const productsData = [
         id: 2,
         name: 'Maçã',
         image: maca,
-        price: 6.98
+        price: 6.98,
+        discount: 0
     },
     {
         id: 3,
@@ -34,7 +35,8 @@ const productsData = [
         id: 5,
         name: 'Maçã',
         image: maca,
-        price: 6.98
+        price: 6.98,
+        discount: 0
     },
     {
         id: 6,
@@ -54,7 +56,8 @@ const productsData = [
         id: 8,
         name: 'Maçã',
         image: maca,
-        price: 6.98
+        price: 6.98,
+        discount: 0
     },
     {
         id: 9,
@@ -74,7 +77,8 @@ const productsData = [
         id: 11,
         name: 'Maçã',
         image: maca,
-        price: 6.98
+        price: 6.98,
+        discount: 0
     },
     {
         id: 12,
@@ -94,7 +98,8 @@ const productsData = [
         id: 14,
         name: 'Maçã',
         image: maca,
-        price: 6.98
+        price: 6.98,
+        discount: 0
     },
     {
         id: 15,

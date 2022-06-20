@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import Product from './Product';
+import { mapProduct } from './Product';
 import IconButton from '../generic/IconButton';
 
 import './Section.css';
-import { ReactComponent as LeftArrowIcon } from './icons/svg/min/left-arrow.svg';
-import { ReactComponent as RightArrowIcon } from './icons/svg/min/right-arrow.svg';
+import { ReactComponent as LeftArrowIcon } from './icons/left-arrow.svg';
+import { ReactComponent as RightArrowIcon } from './icons/right-arrow.svg';
 
 const Section = ({ name, products }) => {
     let page = 0
@@ -39,7 +39,7 @@ const Section = ({ name, products }) => {
                     <IconButton action={slideLeft}><LeftArrowIcon /></IconButton>
                 </span>
                 <span className='Section-content' ref={ref}>
-                    {products.map(p => <Product key={p.id} name={p.name} image={p.image} price={p.price} discount={p.discount}/>)}
+                    {products.map(mapProduct)}
                 </span>
                 <span className='Section-right-arrow'>
                     <IconButton action={slideRight}><RightArrowIcon /></IconButton>

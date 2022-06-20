@@ -5,7 +5,7 @@ import './Button.css'
 const Button = ({ text, action, size }) => {
     return (
         <div className={size === 'standard' ? 'Button ButtonStandardSize' : 'Button ButtonFitSize'} onClick={action}>
-            <span>{text}</span>
+            {text}
         </div>)
     ;
 }

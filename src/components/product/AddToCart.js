@@ -2,8 +2,8 @@ import React from 'react';
 import IconButton from '../generic/IconButton';
 
 import './AddToCart.css'
-import { ReactComponent as AddIcon } from './icons/svg/min/add-sign.svg'
-import { ReactComponent as MinusIcon } from './icons/svg/min/minus-sign.svg'
+import { ReactComponent as AddIcon } from './icons/add-sign.svg'
+import { ReactComponent as MinusIcon } from './icons/minus-sign.svg'
 
 const AddToCart = ({ cartAmount, setCartAmount, size }) => {
     const cartDecreaseAmount = (e) => {
@@ -20,11 +20,11 @@ const AddToCart = ({ cartAmount, setCartAmount, size }) => {
 
     return (
         <div className={size === 'standard' ? 'AddToCart AddToCartStandardSize' : 'AddToCart AddToCartFitSize'}>
-            <span className='AddToCart-increase' onClick={cartDecreaseAmount}>
+            <span className='AddToCart-increase'>
                 <IconButton action={cartDecreaseAmount}><MinusIcon /></IconButton>
             </span>
             <span className='AddToCart-amount' onClick={(e) => e.stopPropagation()}>{cartAmount}</span>
-            <span className='AddToCart-decrease' onClick={cartIncreaseAmount}>
+            <span className='AddToCart-decrease'>
                 <IconButton action={cartIncreaseAmount}><AddIcon /></IconButton>
             </span>
         </div>
