@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { mapProduct } from './Product';
 import IconButton from '../generic/IconButton';
 
@@ -10,6 +10,8 @@ const Section = ({ name, products }) => {
     let page = 0
 
     const ref = useRef(null)
+    const [showArrows, setShowArrows] = useState(true)
+    useEffect(() => setShowArrows(ref.current.offsetWidth < ref.current.scrollWidth), [])
 
     const slideLeft = () => {
         if (page > 0) {
@@ -32,18 +34,22 @@ const Section = ({ name, products }) => {
     }
 
     return (
-        <section>
+        <section className='Section-container'>
             <h1 className='Section-header'>{name}</h1>
             <div className='Section'>
-                <span className='Section-left-arrow'>
-                    <IconButton action={slideLeft}><LeftArrowIcon /></IconButton>
-                </span>
+                {showArrows &&
+                    <span className='Section-left-arrow'>
+                        <IconButton action={slideLeft}><LeftArrowIcon /></IconButton>
+                    </span>
+                }
                 <span className='Section-content' ref={ref}>
                     {products.map(mapProduct)}
                 </span>
-                <span className='Section-right-arrow'>
-                    <IconButton action={slideRight}><RightArrowIcon /></IconButton>
-                </span>
+                {showArrows &&
+                    <span className='Section-right-arrow'>
+                        <IconButton action={slideRight}><RightArrowIcon /></IconButton>
+                    </span>
+                }
             </div>
         </section>
     );

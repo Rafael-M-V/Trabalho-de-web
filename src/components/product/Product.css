@@ -6,8 +6,8 @@
 
 .Product {
     position: relative;
-    min-width: 200px;
-    min-height: 250px;
+    width: 200px;
+    height: 255px;
     margin: 5px;
     padding: 10px;
     box-sizing: border-box;
@@ -43,15 +43,18 @@
 }
 
 .Product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 132px;
+    max-height: 132px;
     box-sizing: border-box;
     margin: 20px 0;
 }
 
 .Product-image img {
-    width: 132px;
-    height: 132px;
-    margin-left: 50%;
-    transform: translate(-50%, 0);
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .Product-info {
@@ -60,6 +63,10 @@
 }
 
 .Product-name {
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 1em;
     color: var(--neutral-color);
     cursor: pointer;

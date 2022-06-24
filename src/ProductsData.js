@@ -17,7 +17,7 @@ import acucar_uniao from './components/product/images/nao_pereciveis/acucar_unia
 import arroz_branco_camil from './components/product/images/nao_pereciveis/arroz_branco_camil.png'
 import arroz_integral_camil from './components/product/images/nao_pereciveis/arroz_integral_camil.png'
 import arroz_parboilizado_camil from './components/product/images/nao_pereciveis/arroz_parboilizado_camil.png'
-import atum_solido_gomez_da_costa from './components/product/images/nao_pereciveis/atum_solido_gomez_da_costa.jpg'
+import atum_solido_gomes_da_costa from './components/product/images/nao_pereciveis/atum_solido_gomes_da_costa.jpg'
 import cafe_nescafe from './components/product/images/nao_pereciveis/cafe_nescafe.png'
 import feijao_carioca_camil from './components/product/images/nao_pereciveis/feijao_carioca_camil.png'
 import leite_em_po_ninho from './components/product/images/nao_pereciveis/leite_em_po_ninho.png'
@@ -44,10 +44,10 @@ import agua_sanitaria_ype from './components/product/images/limpeza/agua_sanitar
 import ajax_fresh_lemon from './components/product/images/limpeza/ajax_fresh_lemon.png'
 import sabao_ariel from './components/product/images/limpeza/sabao_ariel.png'
 
-const frutas = [
+const fruit = [
 	{
         id: 1,
-        name: 'Pera',
+        name: 'Pera 200 g',
         image: pera,
 		stockAmount: 10,
         price: 6.98,
@@ -55,7 +55,7 @@ const frutas = [
     },
     {
         id: 2,
-        name: 'Maçã',
+        name: 'Maçã 200 g',
         image: maca,
 		stockAmount: 10,
         price: 6.98,
@@ -63,7 +63,7 @@ const frutas = [
     },
     {
         id: 3,
-        name: 'Banana',
+        name: 'Banana 350 g',
         image: banana,
 		stockAmount: 10,
         price: 6.98,
@@ -71,34 +71,34 @@ const frutas = [
     },
     {
         id: 4,
-        name: 'Melancia',
+        name: 'Melancia 8 kg (un.)',
         image: melancia,
 		stockAmount: 10,
-        price: 6.98,
+        price: 32.20,
         discount: 0.05
     },
     {
         id: 5,
-        name: 'Melão',
+        name: 'Melão 2 kg (un.)',
         image: melao,
 		stockAmount: 10,
-        price: 6.98,
+        price: 16.98,
         discount: 0
     },
     {
         id: 6,
-        name: 'Morango',
+        name: 'Morango 250 g',
         image: morango,
 		stockAmount: 10,
-        price: 6.98,
+        price: 14.98,
         discount: 0.20
     },
 ]
 
-const frios = [
+const coldCut = [
 	{
         id: 9,
-        name: 'Presunto cozido Sadia - 180g',
+        name: 'Presunto cozido Sadia 180 g',
         image: presunto_cozido_sadia,
 		stockAmount: 10,
         price: 6.98,
@@ -107,17 +107,17 @@ const frios = [
     {
         id: 10,
         name: 'Queijo minas (padrão) light fracionado',
-        image: maca,
+        image: queijo_minas_light_tirolez,
 		stockAmount: 10,
         price: 6.98,
         discount: 0
     },
 ]
 
-const pao = [
+const bread = [
     {
         id: 7,
-        name: 'Pão de fôrma tradicional Pullman - 500g',
+        name: 'Pão de fôrma tradicional Pullman 500 g',
         image: pao_de_forma_pullman,
 		stockAmount: 10,
         price: 6.98,
@@ -125,7 +125,7 @@ const pao = [
     },
     {
         id: 8,
-        name: 'Pão de forma premium Panco - 500g',
+        name: 'Pão de forma premium Panco 500 g',
         image: pao_de_forma_panco,
 		stockAmount: 10,
         price: 6.98,
@@ -133,18 +133,18 @@ const pao = [
     },
 ]
 
-const enlatados = [
+const canned = [
 	{
 		id: 14,
-		name: 'Atum Sólido em Óleo Gomes da Costa - Lata',
-		image: atum_solido_gomez_da_costa,
+		name: 'Atum Sólido em Óleo Gomes da Costa (un.)',
+		image: atum_solido_gomes_da_costa,
 		stockAmount: 10,
 		price: 5.12,
 		discount: 0
 	},
 	{
 		id: 19,
-		name: 'Sardinhas com Óleo Coqueiro - Lata',
+		name: 'Sardinhas com Óleo Coqueiro (un.)',
 		image: sardinha_coqueiro,
 		stockAmount: 10,
 		price: 5.12,
@@ -152,10 +152,10 @@ const enlatados = [
 	},
 ]
 
-const graos = [
+const grain = [
 	{
 		id: 13,
-		name: 'Arroz Branco Tipo 1 Camil - 5kg',
+		name: 'Arroz Branco Tipo 1 Camil 5 kg',
 		image: arroz_branco_camil,
 		stockAmount: 10,
 		price: 5.12,
@@ -163,7 +163,7 @@ const graos = [
 	},
 	{
 		id: 24,
-		name: 'Feijão Carioca Comum Camil - 1kg',
+		name: 'Feijão Carioca Comum Camil 1 kg',
 		image: feijao_carioca_camil,
 		stockAmount: 10,
 		price: 5.12,
@@ -171,7 +171,7 @@ const graos = [
 	},
 	{
 		id: 25,
-		name: 'Arroz Parboilizado Camil - 5kg',
+		name: 'Arroz Parboilizado Camil 5 kg',
 		image: arroz_parboilizado_camil,
 		stockAmount: 10,
 		price: 5.12,
@@ -179,7 +179,7 @@ const graos = [
 	},
 	{
 		id: 37,
-		name: 'Arroz Integral Camil - 1kg',
+		name: 'Arroz Integral Camil 1 kg',
 		image: arroz_integral_camil,
 		stockAmount: 10,
 		price: 5.12,
@@ -187,10 +187,10 @@ const graos = [
 	},
 ]
 
-const farinhas = [
+const flour = [
 	{
 		id: 11,
-		name: 'Farinha de trigo tradicional Dona Benta Tipo 1 - 1kg',
+		name: 'Farinha de trigo tradicional Dona Benta Tipo 1 1 kg',
 		image: farinha_de_trigo_dona_benta,
 		stockAmount: 10,
 		price: 5.12,
@@ -198,7 +198,7 @@ const farinhas = [
 	},
 	{
 		id: 27,
-		name: 'Farinha de Mandioca Fina Seca Yoki - 500g',
+		name: 'Farinha de Mandioca Fina Seca Yoki 500 g',
 		image: farinha_mandioca_yoki,
 		stockAmount: 10,
 		price: 5.12,
@@ -206,10 +206,10 @@ const farinhas = [
 	},
 ]
 
-const acucares = [
+const sugar = [
 	{
 		id: 12,
-		name: 'Açúcar Granulado Refinado Premium Olho D\'Água - 1kg',
+		name: 'Açúcar Granulado Refinado Premium Olho D\'Água 1 kg',
 		image: acucar_olho_dagua,
 		stockAmount: 10,
 		price: 5.12,
@@ -217,7 +217,7 @@ const acucares = [
 	},
 	{
 		id: 28,
-		name: 'Açúcar Refinado União - 1kg',
+		name: 'Açúcar Refinado União 1 kg',
 		image: acucar_uniao,
 		stockAmount: 10,
 		price: 5.12,
@@ -225,7 +225,7 @@ const acucares = [
 	},
 	{
 		id: 29,
-		name: 'Açúcar Refinado Especial Caravelas - 1kg',
+		name: 'Açúcar Refinado Especial Caravelas 1 kg',
 		image: acucar_caravelas,
 		stockAmount: 10,
 		price: 5.12,
@@ -233,10 +233,10 @@ const acucares = [
 	},
 ]
 
-const alimentos_em_po = [
+const powdered = [
 	{
 		id: 15,
-		name: 'Café instantâneo Nescafé - 170g',
+		name: 'Café instantâneo Nescafé 170 g',
 		image: cafe_nescafe,
 		stockAmount: 10,
 		price: 5.12,
@@ -244,7 +244,7 @@ const alimentos_em_po = [
 	},
 	{
 		id: 16,
-		name: 'Leite em Pó Ninho - 400g',
+		name: 'Leite em Pó Ninho 400 g',
 		image: leite_em_po_ninho,
 		stockAmount: 10,
 		price: 5.12,
@@ -252,7 +252,7 @@ const alimentos_em_po = [
 	},
 	{
 		id: 20,
-		name: 'Achocolatado Toddy original - 400g',
+		name: 'Achocolatado Toddy original 400 g',
 		image: toddy_achocolatado,
 		stockAmount: 10,
 		price: 5.12,
@@ -260,10 +260,10 @@ const alimentos_em_po = [
 	},
 ]
 
-const massas = [
+const pasta = [
 	{
 		id: 17,
-		name: 'Macarrão Pena Renata - 500g',
+		name: 'Macarrão Pena Renata 500 g',
 		image: macarrao_pena_renata,
 		stockAmount: 10,
 		price: 5.12,
@@ -271,7 +271,7 @@ const massas = [
 	},
 	{
 		id: 30,
-		name: 'Nissin Lámen Sabor Galinha - 80g Macarrão, 5g Tempero',
+		name: 'Nissin Lámen Sabor Galinha 80 g (tempero 5 g)',
 		image: macarrao_instantaneo_nissin,
 		stockAmount: 10,
 		price: 5.12,
@@ -279,18 +279,18 @@ const massas = [
 	},
 ]
 
-const oleos = [
+const vegetableOil = [
 	{
 		id: 18,
-		name: 'Óleo de Girassol Liza - 900mL',
+		name: 'Óleo de Girassol Liza 900 mL',
 		image: oleo_de_girassol_liza,
 		stockAmount: 10,
 		price: 5.12,
 		discount: 0
 	},
 	{
-		id: 18,
-		name: 'Óleo de Milho Liza - 900mL',
+		id: 48,
+		name: 'Óleo de Milho Liza 900 mL',
 		image: oleo_de_milho_liza,
 		stockAmount: 10,
 		price: 5.12,
@@ -298,18 +298,18 @@ const oleos = [
 	},
 ]
 
-const shampoos = [
+const shampoo = [
 	{
 		id: 23,
-		name: 'Shampoo Oxygen Moisture Dove - 355mL',
+		name: 'Shampoo Oxygen Moisture Dove 355 mL',
 		image: shampoo_dove,
 		stockAmount: 10,
 		price: 5.12,
 		discount: 0
 	},
 	{
-		id: 34,
-		name: 'Shampoo Johnson\'s Baby com água purificada - 200mL',
+		id: 44,
+		name: 'Shampoo Johnson\'s Baby com água purificada 200 mL',
 		image: shampoo_johnson,
 		stockAmount: 10,
 		price: 5.12,
@@ -317,10 +317,10 @@ const shampoos = [
 	},
 ]
 
-const sabonetes = [
+const soap = [
 	{
 		id: 22,
-		name: 'Sabonete Original Dove - 90g',
+		name: 'Sabonete Original Dove 90 g',
 		image: sabonete_dove,
 		stockAmount: 10,
 		price: 5.12,
@@ -328,7 +328,7 @@ const sabonetes = [
 	},
 	{
 		id: 31,
-		name: 'Sabonete Johnson\'s Óleo de Amêndoas - 90g',
+		name: 'Sabonete Johnson\'s Óleo de Amêndoas 90 g',
 		image: sabonete_johnson,
 		stockAmount: 10,
 		price: 5.12,
@@ -336,7 +336,7 @@ const sabonetes = [
 	},
 	{
 		id: 32,
-		name: 'Sabonete Lux Buquê de Jasmim - 85g',
+		name: 'Sabonete Lux Buquê de Jasmim 85 g',
 		image: sabonete_lux,
 		stockAmount: 10,
 		price: 5.12,
@@ -344,7 +344,7 @@ const sabonetes = [
 	},
 	{
 		id: 33,
-		name: 'Sabonete Leite com Hidratante Nivea - 125g',
+		name: 'Sabonete Leite com Hidratante Nivea 125 g',
 		image: sabonete_nivea,
 		stockAmount: 10,
 		price: 5.12,
@@ -352,10 +352,10 @@ const sabonetes = [
 	},
 ]
 
-const pastas_de_dente = [
+const toothpaste = [
 	{
 		id: 21,
-		name: 'Pasta de Dente Sorriso - 90g',
+		name: 'Pasta de Dente Sorriso 90 g',
 		image: pasta_de_dente_sorriso,
 		stockAmount: 10,
 		price: 5.12,
@@ -363,7 +363,7 @@ const pastas_de_dente = [
 	},
 	{
 		id: 34,
-		name: 'Pasta de Dente Oral-B Pro-Expert ',
+		name: 'Pasta de Dente Oral-B Pro-Expert',
 		image: pasta_de_dente_oralb,
 		stockAmount: 10,
 		price: 5.12,
@@ -371,7 +371,7 @@ const pastas_de_dente = [
 	},
 	{
 		id: 35,
-		name: 'Pasta de Dente Colgate Max Fresh - 170g',
+		name: 'Pasta de Dente Colgate Max Fresh 170 g',
 		image: pasta_de_dente_colgate,
 		stockAmount: 10,
 		price: 5.12,
@@ -379,10 +379,10 @@ const pastas_de_dente = [
 	},
 ]
 
-const papel_higienico = [
+const toiletPaper = [
 	{
-		id: 20,
-		name: 'Papel Higiênico Neutro Folha Dupla Neve - 4 rolos de 30m',
+		id: 50,
+		name: 'Papel Higiênico Neutro Folha Dupla Neve (4 x 30 m)',
 		image: papel_higienico_neve,
 		stockAmount: 10,
 		price: 5.12,
@@ -390,7 +390,7 @@ const papel_higienico = [
 	},
 	{
 		id: 36,
-		name: 'Papel Higiênico Ultra Folha Dupla Elite - 4 rolos de 30m',
+		name: 'Papel Higiênico Ultra Folha Dupla Elite (4 x 30 m)',
 		image: papel_higienico_elite,
 		stockAmount: 10,
 		price: 5.12,
@@ -398,10 +398,10 @@ const papel_higienico = [
 	},
 ]
 
-const produtos_limpeza = [
+const cleaning = [
 	{
 		id: 38,
-		name: 'Água Sanitária Ypê Cloro Ativo 3 - 2L',
+		name: 'Água Sanitária Ypê Cloro Ativo 3 2 L',
 		image: agua_sanitaria_ype,
 		stockAmount: 10,
 		price: 5.12,
@@ -409,7 +409,7 @@ const produtos_limpeza = [
 	},
 	{
 		id: 39,
-		name: 'Ajax Fresh Lemon - 500mL',
+		name: 'Ajax Fresh Lemon 500 mL',
 		image: ajax_fresh_lemon,
 		stockAmount: 10,
 		price: 5.12,
@@ -417,10 +417,62 @@ const produtos_limpeza = [
 	},
 	{
 		id: 40,
-		name: 'Sabão Para Roupas Concentrado Ariel - 630mL',
+		name: 'Sabão Para Roupas Concentrado Ariel 630 mL',
 		image: sabao_ariel,
 		stockAmount: 10,
 		price: 5.12,
 		discount: 0
 	},
 ]
+
+const productsData = [
+	...fruit, ...coldCut, ...bread, ...canned, ...grain, ...flour, ...sugar,
+	...powdered, ...pasta, ...vegetableOil, ...shampoo, ...soap,
+	...toothpaste, ...toiletPaper, ...cleaning
+]
+
+export default productsData;
+
+export const sections = [
+	{
+		title: 'Para sua sobrevivência',
+		content: [...grain, ...pasta, ...bread, ...canned, ...powdered, ...coldCut],
+		categories: ['nonPerishable']
+	},
+	{
+		title: 'Mantenha-se limpo',
+		content: [...toiletPaper, ...toothpaste, ...soap, ...shampoo],
+		categories: ['hygiene']
+	},
+	{
+		title: 'Para cuidar do seu lar',
+		content: [...cleaning],
+		categories: ['cleaning']
+	},
+	{
+		title: 'Para você, chef',
+		content: [...vegetableOil, ...flour, ...sugar, ...pasta],
+		categories: ['nonPerishable']
+	},
+	{
+		title: 'Perfeitos para os amantes de massa',
+		content: [...pasta, ...bread],
+		categories: ['nonPerishable']
+	},
+	{
+		title: 'Ah, que frios...',
+		content: [...coldCut],
+		categories: ['perishable']
+	},
+	{
+		title: 'Porque saúde é importante',
+		content: [...fruit],
+		categories: ['perishable']
+	}
+]
+
+export const productsOnSale = productsData.filter(p => p.discount > 0)
+export const sectionsPerishable = sections.filter(s => s.categories.includes('perishable'))
+export const sectionsNonPerishable = sections.filter(s => s.categories.includes('nonPerishable'))
+export const sectionsCleaning = sections.filter(s => s.categories.includes('cleaning'))
+export const sectionsHygiene = sections.filter(s => s.categories.includes('hygiene'))

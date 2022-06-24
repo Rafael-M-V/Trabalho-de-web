@@ -29,9 +29,9 @@ const ShoppingCartItem = ({ id, originalAmount, cart, setCart, readOnly = false,
         <>
         <div className={`ShoppingCartItem ${readOnly ? 'ShoppingCartItem-read-only' : ''}`} onClick={() => setOpenPopUp(true)}>
             <span className='ShoppingCartItem-image'><img src={image} alt={name}/></span>
-            <span className='ShoppingCartItem-text'>{name}</span>
+            <span className='ShoppingCartItem-name'>{name}</span>
             {readOnly && <span>{amount}</span>}
-            <span className='ShoppingCartItem-text'>{formatCurrency(price * (1 - discount))}</span>
+            <span className='ShoppingCartItem-price'>{formatCurrency(price * (1 - discount))}</span>
             {!readOnly && <AddToCart cartAmount={amount} setCartAmount={setAmount} size='standard'/>}
         </div>
         {openPopUp && !readOnly && <ProductPopUp setOpen={setOpenPopUp} productData={product} cartAmount={amount} setCartAmount={setAmount} recursive={popUpRecursive} />}

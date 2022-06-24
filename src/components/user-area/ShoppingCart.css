@@ -2,6 +2,7 @@
 
 .ShoppingCart {
     position: relative;
+    max-width: 500px;
 }
 
 .ShoppingCart-message-empty {
