@@ -1,0 +1,11 @@
+@import '/src/Global.css';
+
+.Page {
+    position: relative;
+    width: calc(100% - var(--sidebar-width));
+    min-height: 100vh;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}

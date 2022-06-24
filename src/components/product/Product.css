@@ -1,0 +1,103 @@
+@import '/src/Global.css';
+
+:root {
+    --price-text-color: #00aa00;
+}
+
+.Product {
+    position: relative;
+    width: 200px;
+    height: 255px;
+    margin: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: var(--bg-color-lightest);
+    box-shadow: 3px 4px 2px var(--bg-color-darkest);
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.Product:hover {
+    box-shadow: 0 0 8px 4px var(--bg-color-darkest);
+}
+
+.Product-add-to-cart-container {
+    position: absolute;
+    right: 5px;
+}
+
+.Product-add-to-cart {
+    position: absolute;
+    right: 50%;
+    width: 32px;
+    height: 32px;
+    background-color: var(--bg-color-darkest);
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 100ms ease;
+}
+
+.Product-add-to-cart:hover {
+    opacity: 1;
+}
+
+.Product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 132px;
+    max-height: 132px;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.Product-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.Product-info {
+    padding-top: 10px;
+    border-top: 1px solid var(--bg-color-darkest);
+}
+
+.Product-name {
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1em;
+    color: var(--neutral-color);
+    cursor: pointer;
+}
+
+.Product-price-container {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.Product-price {
+    color: var(--neutral-color);
+}
+
+.Product-price-discount {
+    color: var(--primary-color);
+    /* color: var(--price-text-color); */
+}
+
+.Product-price-original {
+    color: var(--neutral-color-lighter);
+    margin-left: 8px;
+    text-decoration: line-through;
+}
+
+.Product-discount {
+    margin-left: 8px;
+    padding: 2px 6px;
+    text-align: center;
+    border-radius: 10%;
+    background-color: var(--primary-color);
+    /* background-color: var(--price-text-color); */
+    color: var(--bg-color-lightest);
+}

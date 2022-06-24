@@ -1,0 +1,13 @@
+@import '/src/Global.css';
+
+.IconButton svg {
+    max-width: 60%;
+    max-height: 60%;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
+
+.IconButton svg > path {
+    stroke: var(--primary-color) !important;
+    fill: var(--primary-color) !important;
+}

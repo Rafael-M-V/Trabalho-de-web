@@ -1,0 +1,68 @@
+@import '/src/Global.css';
+
+.FloatingBox {
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    min-width: 400px;
+    z-index: 3;
+    border-radius: 5px;
+    /* border: 1px solid var(--primary-color); */
+    box-shadow: 0 0 5px 2px var(--bg-color-darkest);
+    color: var(--neutral-color);
+    background-color: var(--bg-color-lightest);
+    /* background-color: violet; */
+    outline: 0;
+}
+
+.FloatingBox-header {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;    
+    /* background-color: aquamarine; */
+}
+
+.FloatingBox-close-button {
+    float: right;
+    margin: 5px 5px 5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.FloatingBox-container {
+    --floating-box-min-height: 300px;
+    --floating-box-max-height: 600px;
+    min-height: var(--floating-box-min-height);
+    max-height: var(--floating-box-max-height);
+}
+
+.FloatingBox-scroll-area {
+    position: relative;
+    overflow: hidden;
+    height: calc(var(--floating-box-max-height) * 0.65);
+}
+
+.FloatingBox-content {
+    /* margin: 40px 10px; */
+    height: 100%;
+    overflow-y: auto;
+}
+
+.FloatingBox-fixed-bottom, .FloatingBox-fixed-top {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    /* background-color: orange; */
+}
+
+.FloatingBox-fixed-bottom {
+    bottom: 0;
+}
+
+.FloatingBox-fixed-top {
+    top: 0;
+}

@@ -1,0 +1,51 @@
+@import '/src/Global.css';
+
+.ProductPopUp {
+    position: relative;
+    min-width: 30vw;
+    min-height: 60vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ProductPopUp-image {
+    margin-bottom: 50px;
+}
+
+.ProductPopUp-image img {
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.ProductPopUp-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.ProductPopUp-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.ProductPopUp-discount {
+    font-size: 0.6em;
+}
+
+.ProductPopUp-add-to-cart-container {
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 1.25em;
+}

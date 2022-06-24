@@ -1,0 +1,46 @@
+@import '/src/Global.css';
+
+.ShoppingCart {
+    position: relative;
+    max-width: 500px;
+}
+
+.ShoppingCart-message-empty {
+    position: relative;
+    margin: 50% 0 0 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ShoppingCart-message-empty h3 {
+    text-align: center;
+}
+
+.ShoppingCart-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.ShoppingCart-summary-item {
+    margin: 5px;
+}
+
+.ShoppingCart-pay-button {
+    height: 40px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* .ShoppingCart::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 100%;
+    right: 0;
+    border: 15px solid transparent;
+    border-bottom: 15px solid var(--bg-color-darkest);
+} */
