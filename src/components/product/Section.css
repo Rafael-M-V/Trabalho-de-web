@@ -1,7 +1,16 @@
 @import '/src/Global.css';
 
+.Section-container {
+    margin-top: 40px;
+}
+
+.Section-container:first-child {
+    margin-top: 0;
+}
+
 .Section {
     position: relative;
+    max-width: max-content;
 }
 
 .Section-content {
