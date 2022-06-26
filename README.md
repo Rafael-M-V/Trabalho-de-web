@@ -11,6 +11,43 @@ Vinicius Finke Raiter José - 9791052
 # Descrição
 Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
 
+## Funcionalidades implementadas
+### Cliente
+1. Criar conta;
+2. Fazer login;
+3. Fazer logout;
+4. Excluir própria conta conta;
+5. Buscar por produto;
+6. Ver descrição de produto;
+7. Adicionar produto ao carrinho;
+8. Editar carrinho (remover produto, alterar sua quantidade);
+9. Escolher forma de pagamento;
+10. Fazer pagamento;
+
+### Administrador
+1. Funcionalidades 2, 3, 5 e 6 de cliente;
+2. Adicionar produto a venda;
+3. Excluir produto a venda;
+4. Editar produto (preço, desconto, descrição, etc.);
+5. Editar site (produtos em destaque, etc.)
+6. Excluir contas de clientes;
+
+## Dados que serão salvos no servidor
+### Cliente
+1. Nome;
+2. Email;
+3. Senha criptografada;
+4. Endereço;
+5. Forma de pagamento preferida;
+6. Dados de compras anteriores;
+
+### Administrador
+1. Nome;
+2. Email;
+3. Senha Criptografada;
+4. Status de admin;
+
+## Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
   - header: apresenta o cabeçalho da página;
