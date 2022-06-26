@@ -24,7 +24,8 @@ Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos qu
 
 # Como rodar
 ## Pré-requisitos
-  Ter as versões mais recentes de Node.js e npm instaladas;
+  - Node.js (18.4.0)
+  - npm (8.13.1)
 
 ## No terminal
 - Navegue até a pasta do projeto;
