@@ -33,8 +33,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 6. Excluir contas de clientes;
 
 ## Diagrama de Navegação
-### Cliente
-![teste](mockup/diagrama/Diagrama_de_navegacao.png "Teste")
+![teste](mockup/diagrama/diagrama.jpg "Teste")
 
 ## Dados que serão salvos no servidor
 ### Cliente
