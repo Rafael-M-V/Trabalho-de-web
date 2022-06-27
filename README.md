@@ -46,10 +46,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 6. Dados de compras anteriores;
 
 ### Administrador
-1. Nome;
-2. Email;
-3. Senha Criptografada;
-4. Status de admin;
+1. Mesmos dados de um cliente;
 
 ## Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
