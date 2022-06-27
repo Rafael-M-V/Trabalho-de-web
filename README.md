@@ -25,7 +25,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 10. Fazer pagamento;
 
 ### Administrador
-1. Funcionalidades 2, 3, 5 e 6 de cliente;
+1. Funcionalidades de cliente;
 2. Adicionar produto a venda;
 3. Excluir produto a venda;
 4. Editar produto (preço, desconto, descrição, etc.);
