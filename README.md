@@ -47,6 +47,14 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 ### Administrador
 1. Mesmos dados de um cliente;
 
+### Produto
+1. Descrição;
+2. Preço unitário;
+3. Quantidade em estoque;
+4. Unidade;
+5. Valor de desconto;
+6. Código de barras;
+
 ## Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
