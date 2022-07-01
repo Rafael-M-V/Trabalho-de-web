@@ -12,7 +12,7 @@ Vinicius Finke Raiter José - 9791052
 Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
 
 ## 1.1 Funcionalidades implementadas
-### 1.1.1 Cliente
+### Cliente
 1. Criar conta;
 2. Fazer login;
 3. Fazer logout;
@@ -24,7 +24,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 9. Escolher forma de pagamento;
 10. Fazer pagamento;
 
-### 1.1.2 Administrador
+### Administrador
 1. Funcionalidades de cliente;
 2. Adicionar produto a venda;
 3. Excluir produto a venda;
@@ -36,7 +36,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 ![teste](mockup/diagrama/diagrama.jpg "Teste")
 
 ## 1.3 Dados que serão salvos no servidor
-### 1.3.1 Cliente
+### Cliente
 1. Nome;
 2. Email;
 3. Senha criptografada;
@@ -44,10 +44,10 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 5. Forma de pagamento preferida;
 6. Dados de compras anteriores;
 
-### 1.3.2 Administrador
+### Administrador
 1. Mesmos dados de um cliente;
 
-### 1.3.3 Produto
+### Produto
 1. Descrição;
 2. Preço unitário;
 3. Quantidade em estoque;
