@@ -8,10 +8,11 @@ Rafael Meliani Velloso - 4165457
 
 Vinicius Finke Raiter José - 9791052
 
-# Descrição
-Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
+# 1. Requisitos
+ Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
+ Existem dois tipos de usuários: cliente e administrador. O cliente é alguém que pode desfrutar dos serviços do mercado e o admin é um cliente com privilégios (pode alterar dados do site).
 
-## Funcionalidades implementadas
+## 1.1. Funcionalidades implementadas
 ### Cliente
 1. Criar conta;
 2. Fazer login;
@@ -32,10 +33,10 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 5. Editar site (produtos em destaque, etc.)
 6. Excluir contas de clientes;
 
-## Diagrama de Navegação
+## 1.2. Diagrama de Navegação
 ![teste](mockup/diagrama/diagrama.jpg "Teste")
 
-## Dados que serão salvos no servidor
+## 1.3. Dados que serão salvos no servidor
 ### Cliente
 1. Nome;
 2. Email;
@@ -47,7 +48,15 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 ### Administrador
 1. Mesmos dados de um cliente;
 
-## Organização do código
+### Produto
+1. Descrição;
+2. Preço unitário;
+3. Quantidade em estoque;
+4. Unidade;
+5. Valor de desconto;
+6. Código de barras;
+
+# 2. Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
   - header: apresenta o cabeçalho da página;
@@ -59,12 +68,12 @@ O código se encontra na pasta "src" do projeto. Dentro desta pasta está a past
 
 Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda (ProductsData.js) e alguns arquivos de teste.
 
-# Como rodar
-## Pré-requisitos
+# 3. Procedimentos de execução
+## 3.1. Pré-requisitos
   - Node.js (>=16.15.1)
   - npm (>=8.5.5)
 
-## No terminal
+## 3.2. No terminal
 - Navegue até a pasta do projeto;
 - Comando: `npm install` -> Instala os pacotes necessários para o projeto;
 - Comando: `npm start` -> Inicia a execução do projeto;
