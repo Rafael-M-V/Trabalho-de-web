@@ -67,7 +67,7 @@ O código se encontra na pasta "src" do projeto. Dentro desta pasta está a past
 
 Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda (ProductsData.js) e alguns arquivos de teste.
 
-# 2. Como rodar
+# 2. Procedimentos de execução
 ## 2.1. Pré-requisitos
   - Node.js (>=16.15.1)
   - npm (>=8.5.5)
