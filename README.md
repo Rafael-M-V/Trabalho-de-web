@@ -56,7 +56,7 @@ Vinicius Finke Raiter José - 9791052
 5. Valor de desconto;
 6. Código de barras;
 
-## 2. Organização do código
+# 2. Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
   - header: apresenta o cabeçalho da página;
