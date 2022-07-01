@@ -8,8 +8,9 @@ Rafael Meliani Velloso - 4165457
 
 Vinicius Finke Raiter José - 9791052
 
-# 1. Descrição
-Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
+# 1. Requisitos
+ Nosso projeto é um supermercado online, em que o usuário pode escolher produtos, adicionar a seu carrinho virtual e encomendá-los.
+ Existem dois tipos de usuários: cliente e administrador. O cliente é alguém que pode desfrutar dos serviços do mercado e o admin é um cliente com privilégios (pode alterar dados do site).
 
 ## 1.1. Funcionalidades implementadas
 ### Cliente
@@ -55,7 +56,7 @@ Nosso projeto é um supermercado online, em que o usuário pode escolher produto
 5. Valor de desconto;
 6. Código de barras;
 
-## 1.4. Organização do código
+## 2. Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
   - header: apresenta o cabeçalho da página;
@@ -67,12 +68,12 @@ O código se encontra na pasta "src" do projeto. Dentro desta pasta está a past
 
 Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda (ProductsData.js) e alguns arquivos de teste.
 
-# 2. Procedimentos de execução
-## 2.1. Pré-requisitos
+# 3. Procedimentos de execução
+## 3.1. Pré-requisitos
   - Node.js (>=16.15.1)
   - npm (>=8.5.5)
 
-## 2.2. No terminal
+## 3.2. No terminal
 - Navegue até a pasta do projeto;
 - Comando: `npm install` -> Instala os pacotes necessários para o projeto;
 - Comando: `npm start` -> Inicia a execução do projeto;
