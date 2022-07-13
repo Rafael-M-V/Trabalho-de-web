@@ -10,6 +10,8 @@ import SearchResults from './components/page/SearchResults';
 import SearchBar from './components/searchbar/SearchBar';
 import productsData from './ProductsData';
 
+import UserProvider from './context/user/UserProvider';
+
 import './App.css';
 
 const App = () => {
@@ -54,7 +56,7 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState(1)
 
     return (
-        <>
+        <UserProvider>
             <Header>
                 <h1>Mercado Feliz</h1>
                 <SearchBar items={productsData} setSearchTerm={setSearchTerm} setResults={setSearchResults} setCurrentPage={setCurrentPage}/>
@@ -69,7 +71,7 @@ const App = () => {
                 </Page>
             </div>
             {/* <footer className='App-header'><h3>Footer</h3></footer> */}
-        </>
+        </UserProvider>
     );
 }
 

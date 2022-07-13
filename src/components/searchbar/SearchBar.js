@@ -1,6 +1,6 @@
 import React from 'react';
 import IconButton from '../generic/IconButton';
-import Product from '../product/Product';
+import Product, { mapProduct } from '../product/Product';
 
 import './SearchBar.css';
 import { ReactComponent as SearchIcon } from './icons/search.svg';
@@ -15,7 +15,7 @@ const SearchBar = ({ items, setSearchTerm, setResults, setCurrentPage, searchFor
             
             // console.log(normalize(e.target.value) + ', ' + normalize(p.name))
             const match = normalize(p.name).includes(normalize(e.target.value))
-            return match && <Product key={p.id} name={p.name} image={p.image} price={p.price} discount={p.discount} />
+            return match && mapProduct(p)
         }
     }
 

@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import IconButton from '../generic/IconButton';
 import Button from '../generic/Button';
 import ShoppingCart from './ShoppingCart';
 import UserMenu from './UserMenu';
+import LoginPopUp from './LoginPopUp';
+import UserContext from '../../context/user/UserContext';
 
 import './UserArea.css';
 import { ReactComponent as CartIcon } from './icons/cart.svg';
@@ -12,6 +14,13 @@ const UserArea = () => {
     const [loggedIn, setLoggedIn] = useState(false)
     const [openCart, setOpenCart] = useState(false)
     const [openUserMenu, setOpenUserMenu] = useState(false)
+    const [openLogin, setOpenLogin] = useState(false)
+
+    const { token } = useContext(UserContext)
+
+    useEffect(() => {
+        setLoggedIn(token)
+    }, [token])
 
     return (
         <div className='UserArea'>
@@ -30,11 +39,12 @@ const UserArea = () => {
             )
             : (
                 <span className='UserArea-login-button'>
-                    <Button text='Entrar' size='fit' action={() => setLoggedIn(true)}/>
+                    <Button text='Entrar' size='fit' action={() => setOpenLogin(true)}/>
                 </span>
             )}
             {openCart && <ShoppingCart setOpen={setOpenCart} />}
             {openUserMenu && <UserMenu setOpen={setOpenUserMenu} />}
+            {openLogin && <LoginPopUp setOpen={setOpenLogin} />}
         </div>
     );
 }
