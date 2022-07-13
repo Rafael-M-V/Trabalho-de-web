@@ -23,6 +23,10 @@ const productSchema = new mongoose.Schema({
     categories: {
         type: Array,
         required: true
+    },
+    tags: {
+        type: Array,
+        required: true
     }
 });
 

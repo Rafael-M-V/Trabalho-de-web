@@ -44,6 +44,10 @@ export const create = async (req, res) => {
     if (req.body.categories) {
         product.categories = JSON.parse(req.body.categories);
     }
+    
+    if (req.body.tags) {
+        product.tags = req.body.tags.split(',').map(p => p.trim());
+    }
 
     if (req.file && typeof req.file !== 'undefined') {
         product.image = req.file.path;
