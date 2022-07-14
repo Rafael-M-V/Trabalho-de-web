@@ -77,7 +77,7 @@ Dentro da pasta src está a "raiz" da página (`App.js`), os dados dos produtos 
 ## 3.2. No terminal
 - Navegue até a pasta do projeto;
 - Comando: `npm install` -> Instala os pacotes necessários para o projeto;
-- Acesse a pasta 'server';
+- Acesse a pasta `server`;
 - Comando: `npm start` -> Inicia a execução do banco de dados;
 - Em outro terminal, acesse a raiz do projeto;
 - Comando `npm start` -> Inicia a execução do projeto;
