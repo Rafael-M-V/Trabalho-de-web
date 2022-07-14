@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>Product Info</title>
+    </header>
+ 
+    <body>
+        <div id="app" @load="list">
+            <fieldset>
+                <legend><h2>Product Information</h2></legend>
+                <template v-if="product.localImage"><img :src="product.localImage" alt="product.name" width="250px"/> <br/> <br/></template>
+                <form @submit="onSubmitForm">
+                    <label>ID</label> <input v-model="product._id" type="text"> <br/> <br/>
+                    <label>Nome</label> <input v-model="product.name" type="text" required> <br/> <br/>
+                    <label>Imagem</label> <input type="file" accept="image/png, image/jpeg" @change="onChangeImage($event)"> <br/> <br/>
+                    <label>Preço unitário</label> <input v-model="product.price" type="number" min="0" step=".1" required> <br/> <br/>
+                    <label>Unidade</label> <input v-model="product.unit" type="text" required> <br/> <br/>
+                    <label>Categorias</label> <br/> <br/>
+                        <template v-for="category in productCategories">
+                            <input v-model="product.categories" type="checkbox" :true-value="[]" :value="category.value">{{category.name}} <br/> <br/>
+                        </template>
+                    <label>Quantidade em estoque</label> <input v-model="product.stockAmount" type="number" min="0" required> <br/> <br/>
+                    <label>Descrição</label> <textarea v-model="product.description"></textarea> <br/> <br/>
+                    <input type="button" value="Read" @click="read">
+                    <input type="button" value="Delete" @click="del">
+                    <input type="submit" value="Create">
+                </form>
+            </fieldset>
+            <!-- {{product}} -->
+            <ul v-for="p in productsList">
+                <li>{{p._id}}</li>
+            </ul>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+    
+        <script>
+            new Vue({
+                el: '#app',
+                data() {
+                    return {
+                        product: {
+                            categories: [],
+                        },
+                        productCategories: [
+                            {
+                                name: 'Perecíveis',
+                                value: 'perishable'
+                            },
+                            {
+                                name: 'Não Perecíveis',
+                                value: 'nonPerishable'
+                            },
+                            {
+                                name: 'Higiene',
+                                value: 'hygiene'
+                            },
+                            {
+                                name: 'Limpeza',
+                                value: 'cleaning'
+                            },
+                        ],
+                        productsList: []
+                    }
+                },
+                methods: {
+                    list: async function() {
+                        try {
+                            let res = await fetch('http://localhost:3000/products/list');
+                            res = await res.json();
+                            this.productsList = res;
+                        } catch (err) {
+                            console.log('Error:', err);
+                        }
+                    },
+                    read: async function() {
+                        try {
+                            let res = await fetch(`http://localhost:3000/products/${this.product._id || ''}`);
+
+                            if (res.status === 404) {
+                                alert('Erro: produto não encontrado');
+                                return;
+                            }
+
+                            res = await res.json();
+
+                            this.product = res;
+
+                            if (this.product.image && typeof this.product.image != 'undefined') {
+                                this.product.localImage = 'http://localhost:3000/' + this.product.image;
+                            }
+
+                            console.log(this.product);
+                        } catch (err) {
+                            alert('Erro: ' + err);
+                            console.log('Error:', err);
+                        }
+                    },
+                    create: async function() {
+                        try {
+                            const fd = new FormData();
+
+                            for (const key in this.product) {
+                                const value = Array.isArray(this.product[key]) ? JSON.stringify(this.product[key]) : this.product[key];
+                                fd.append(key, value);
+                            }
+
+                            const init = {
+                                method: 'POST',
+                                body: fd
+                            }
+
+                            const res = await fetch(`http://localhost:3000/products/${this.product._id || ''}`, init);
+
+                            if (res.status === 404) {
+                                alert('Erro: produto não encontrado');
+                            } else if (res.ok) {
+                                alert(`Produto ${typeof this.product._id === 'undefined' || this.product._id === '' ? 'criado' : 'alterado'} com sucesso`);
+                            }
+                        } catch (err) {
+                            alert('Erro: ' + err);
+                            console.log('Error:', err);
+                        }
+                    },
+                    del: async function() {
+                        if (this.product._id === '') {
+                            alert('Preencha o campo ID');
+                            return;
+                        }
+
+                        try {
+                            const res = await fetch(`http://localhost:3000/products/${this.product._id}`, { method: 'DELETE' });
+
+                            if (res.status === 404) {
+                                alert('Erro: produto não encontrado');
+                            } else if (res.ok) {
+                                alert('Produto removido com sucesso');
+                            }
+
+                        } catch (err) {
+                            console.log('Error:', err);
+                        }
+                    },
+                    onChangeImage: function(e) {
+                        this.product.localImage = URL.createObjectURL(e.target.files[0]);
+                        this.product.newImage = e.target.files[0];
+                    },
+                    onSubmitForm: function(e) {
+                        e.preventDefault();
+                        this.create();
+                        return false;
+                    }
+                },
+                created: function() {
+                    this.list();
+                }
+            });
+        </script>
+    </body>
+</html>
