@@ -17,13 +17,11 @@ Vinicius Finke Raiter José - 9791052
 1. Criar conta;
 2. Fazer login;
 3. Fazer logout;
-4. Excluir a própria conta;
-5. Buscar por produto;
-6. Ver descrição de produto;
-7. Adicionar produto ao carrinho;
-8. Editar carrinho (remover produto, alterar sua quantidade);
-9. Escolher forma de pagamento;
-10. Fazer pagamento;
+4. Buscar por produto;
+5. Ver descrição de produto;
+6. Adicionar produto ao carrinho;
+7. Editar carrinho (remover produto, alterar sua quantidade);
+8. Fazer pagamento;
 
 ### Administrador
 1. Funcionalidades de cliente;
@@ -34,7 +32,7 @@ Vinicius Finke Raiter José - 9791052
 6. Excluir contas de clientes;
 
 ## 1.2. Diagrama de Navegação
-![teste](mockup/diagrama/diagrama.jpg "Teste")
+![Diagrama](mockup/diagrama/diagrama.jpg "Diagrama de navegação")
 
 ## 1.3. Dados que serão salvos no servidor
 ### Cliente
