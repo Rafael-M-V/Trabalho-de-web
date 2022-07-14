@@ -1,13 +1,14 @@
 import express from 'express';
 import * as userController from '../controllers/userController.js';
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.get('/:email', userController.findByEmail);
-router.get('/', userController.findAll);
-router.put('/:email', userController.update);
-router.post('/', userController.create);
-router.delete('/:email', userController.remove);
+router.get('/:id', auth.verify(auth.permissions.user), userController.findById);
+router.get('/', auth.verify(auth.permissions.admin), userController.findAll);
+router.put('/:id', auth.verify(auth.permissions.user), userController.update);
+router.post('/', auth.verify(auth.permissions.any), userController.create);
+router.delete('/:id', auth.verify(auth.permissions.admin), userController.remove);
 router.post('/login', userController.login);
 
 export default router;

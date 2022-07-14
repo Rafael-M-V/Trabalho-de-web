@@ -3,13 +3,13 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import errMsg from './errorMessages.js';
 
-export const findByEmail = async (req, res) => {
-    if (req.params.email === '') {
+export const findById = async (req, res) => {
+    if (req.params.id === '') {
         return res.status(404).send(errMsg.NO_KEY);
     }
     
     try {
-        const user = await User.findOne({ email: req.params.email }).orFail().exec();
+        const user = await User.findOne({ _id: req.params.id }).orFail().exec();
         res.status(200).send(user);
     } catch (err) {
         console.log(err);
@@ -28,6 +28,10 @@ export const findAll = async (req, res) => {
 }
 
 export const create = async (req, res) => {
+    if (req.user && req.user.role !== 'admin' && req.body.role === 'admin') {
+        return res.status(403).send(errMsg.FORBIDDEN);
+    }
+    
     const user = req.body;
     delete user._id;
     
@@ -48,14 +52,14 @@ export const create = async (req, res) => {
 }
 
 export const update = async (req, res) => {
-    if (req.params.email === '') {
+    if (req.params.id === '') {
         return res.status(404).send(errMsg.NO_KEY);
     }
 
     const user = req.body;
     
     try {
-        await User.findOneAndUpdate({ email: req.params.email }, user).orFail().exec();
+        await User.findOneAndUpdate({ _id: req.params.id }, user).orFail().exec();
         res.status(200).send();
     } catch (err) {
         console.log(err);
@@ -64,12 +68,12 @@ export const update = async (req, res) => {
 }
 
 export const remove = async (req, res) => {
-    if (req.params.email === '') {
+    if (req.params.id === '') {
         return res.status(404).send(errMsg.NO_KEY);
     }
 
     try {
-        await User.findOneAndRemove({ email: req.params.email }).orFail().exec();
+        await User.findOneAndRemove({ _id: req.params.id }).orFail().exec();
         res.status(200).send();
     } catch (err) {
         console.log(err);
@@ -87,7 +91,7 @@ export const login = async (req, res) => {
     try {
         const user = await User.findOne({ email: email }).orFail().exec();
         if (await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign({ email: user.email }, process.env['JWT_KEY'], { expiresIn: '1m' });
+            const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, process.env['JWT_KEY'], { expiresIn: '5m' });
             res.status(200).send({ token: token });
         } else {
             throw new Error();

@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
         type: Map,
         required: true
     },
+    role: {
+        type: String,
+        required: true
+    }
 });
 
 export default mongoose.model('User', userSchema);
