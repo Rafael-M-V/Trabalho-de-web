@@ -32,7 +32,7 @@ export const create = async (req, res) => {
     const user = req.body;
     delete user._id;
 
-    if (req.user.role !== auth.permissions.admin && req.body.role === auth.permissions.admin) {
+    if (req.body.role === auth.permissions.admin && (!req.user.role || req.user.role !== auth.permissions.admin)) {
         return res.status(403).send(errMsg.FORBIDDEN);
     }
     

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from 'react';
 import Button from '../generic/Button';
 import PopUp from '../generic/PopUp';
 import UserContext from '../../context/user/UserContext';
+import api from '../../api';
 
 import './LoginPopUp.css';
 
@@ -24,23 +25,24 @@ const Login = ({ setOpen }) => {
         })
     }
 
-    const login = () => {
-        if (loginInfo.email === 'admin@admin' && loginInfo.password === 'admin') {
-            return { token: 'token123abc' }
-        }
-
-        alert('Usuário inválido')
-    }
-
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
 
-        const token = login()
-        if (token) {
+        if (loginInfo.email === '' || loginInfo.password === '') {
+            return alert('Preencha os campos de e-mail e senha')
+        }
+
+        try {
+            const token = await api.login(loginInfo.email, loginInfo.password)
             setToken(token)
             localStorage.setItem('acessToken', token)
             alert('Logado com sucesso')
             setOpen(false)
+        } catch (err) {
+            if (err.response.status === 404) {
+                return alert('Usuário e/ou senha inválido(s)')
+            }
+            alert(err)
         }
     }
 

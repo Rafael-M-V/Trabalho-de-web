@@ -32,6 +32,10 @@ auth.verify = (permission = 'customer') => {
             req.user = decode;
             next();
         } catch (err) {
+            if (permission === 'any') {
+                return next()
+            }
+            
             console.log(err);
             return res.status(401).send(errMsg.UNAUTHORIZED);
         }
