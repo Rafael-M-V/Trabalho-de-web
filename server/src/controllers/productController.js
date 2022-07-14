@@ -1,9 +1,9 @@
 import Product from '../models/Product.js';
-import err from './errorMessages.js';
+import errMsg from './errorMessages.js';
 
 export const findById = async (req, res) => {
     if (req.params.id === '') {
-        return res.status(404).send(err.NO_KEY_ERROR_MESSAGE);
+        return res.status(404).send(errMsg.NO_KEY);
     }
     
     try {
@@ -11,7 +11,7 @@ export const findById = async (req, res) => {
         res.status(200).send(product);
     } catch (err) {
         console.log(err);
-        res.status(404).send(err.NOT_FOUND_ERROR_MESSAGE);
+        res.status(404).send(errMsg.NOT_FOUND);
     }
 }
 
@@ -21,7 +21,7 @@ export const findLast = async (req, res) => {
         res.status(200).send(products[0]);
     } catch (err) {
         console.log(err);
-        res.status(404).send(err.NOT_FOUND_ERROR_MESSAGE);
+        res.status(404).send(errMsg.NOT_FOUND);
     }
 }
 
@@ -31,7 +31,7 @@ export const findAll = async (req, res) => {
         res.status(200).send(products);
     } catch (err) {
         console.log(err);
-        res.status(404).send(err.NOT_FOUND_ERROR_MESSAGE);
+        res.status(404).send(errMsg.NOT_FOUND);
     }
 }
 
@@ -58,7 +58,7 @@ export const create = async (req, res) => {
 
 export const update = async (req, res) => {
     if (req.params.id === '') {
-        return res.status(404).send(err.NO_KEY_ERROR_MESSAGE);
+        return res.status(404).send(errMsg.NO_KEY);
     }
 
     const product = req.body;
@@ -76,13 +76,13 @@ export const update = async (req, res) => {
         res.status(200).send();
     } catch (err) {
         console.log(err);
-        res.status(404).send(`err.NOT_FOUND_ERROR_MESSAGE: ${err}`);
+        res.status(404).send(`errMsg.NOT_FOUND: ${err}`);
     }
 }
 
 export const remove = async (req, res) => {
     if (req.params.id === '') {
-        return res.status(404).send(err.NO_KEY_ERROR_MESSAGE);
+        return res.status(404).send(errMsg.NO_KEY);
     }
 
     try {
@@ -90,6 +90,6 @@ export const remove = async (req, res) => {
         res.status(200).send();
     } catch (err) {
         console.log(err);
-        res.status(404).send(`err.NOT_FOUND_ERROR_MESSAGE: ${err}`);
+        res.status(404).send(`errMsg.NOT_FOUND: ${err}`);
     }
 }
