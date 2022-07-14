@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import errMsg from './errorMessages.js';
+import auth from '../middleware/auth.js';
 
 export const findById = async (req, res) => {
     if (req.params.id === '') {
@@ -28,12 +29,12 @@ export const findAll = async (req, res) => {
 }
 
 export const create = async (req, res) => {
-    if (req.user && req.user.role !== 'admin' && req.body.role === 'admin') {
-        return res.status(403).send(errMsg.FORBIDDEN);
-    }
-    
     const user = req.body;
     delete user._id;
+
+    if (req.user.role !== auth.permissions.admin && req.body.role === auth.permissions.admin) {
+        return res.status(403).send(errMsg.FORBIDDEN);
+    }
     
     try {
         const hash = await bcrypt.hash(req.body.password, 10);
@@ -91,7 +92,7 @@ export const login = async (req, res) => {
     try {
         const user = await User.findOne({ email: email }).orFail().exec();
         if (await bcrypt.compare(password, user.password)) {
-            const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, process.env['JWT_KEY'], { expiresIn: '5m' });
+            const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, process.env['JWT_KEY'], { expiresIn: '1h' });
             res.status(200).send({ token: token });
         } else {
             throw new Error();

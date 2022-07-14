@@ -3,7 +3,7 @@ import errMsg from '../controllers/errorMessages.js';
 
 const auth = {};
 
-auth.verify = (permission = 'user') => {
+auth.verify = (permission = 'customer') => {
     return (req, res, next) => {
         try {
             if (!req.headers.authorization) {
@@ -13,7 +13,7 @@ auth.verify = (permission = 'user') => {
                 
                 throw new Error('token not found');
             }
-            
+
             const token = req.headers.authorization.split(' ')[1];
             const decode = jwt.verify(token, process.env['JWT_KEY']);
 
@@ -21,8 +21,8 @@ auth.verify = (permission = 'user') => {
                 switch (permission) {
                     case 'admin':
                         return res.status(403).send(errMsg.FORBIDDEN);
-                    case 'user':
-                        if (decode.email !== req.params.email) {
+                    case 'customer':
+                        if (decode._id !== req.params._id) {
                             return res.status(403).send(errMsg.FORBIDDEN);
                         }
                         break;
@@ -39,9 +39,9 @@ auth.verify = (permission = 'user') => {
 }
 
 auth.permissions = {
-    admin : 'admin', // only admins can access
-    user  : 'user',  // only admins and the user themselves can access
-    any   : 'any'    // anyone can access (default)
+    admin     : 'admin', // only admins can access
+    customer  : 'customer',  // only admins and the user themselves can access
+    any       : 'any'    // anyone can access (default)
 }
 
 export default auth;
