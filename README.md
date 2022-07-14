@@ -66,7 +66,7 @@ Existe uma pasta "server" contendo as funcionalidades necessárias para a criaç
   - Models: pasta que possui os esquemas de dados de produtos e usuários;
   - Routes: contém as rotas que serão utilizadas para operações internas de clientes e produtos, que executam as chamadas de acordo;
 
-Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda (ProductsData.js) e alguns arquivos de teste.
+Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda podem vir de dois locais, pelo banco de dados ou em uma versão local em `ProductsData.js`.
 
 # 3. Procedimentos de execução
 ## 3.1. Pré-requisitos
@@ -82,3 +82,5 @@ Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos qu
 - Em outro terminal, acesse a raiz do projeto;
 - Comando `npm start` -> Inicia a execução do projeto;
 
+# 4. Funcionalidade especial
+Nossa aplicação conta com uma barra capaz de realizar buscas por diferentes produtos, o usuário não precisa saber exatamente o nome daquilo que está procurando pois a barra é equipada para realizar buscas apenas com partes do nome de um produto (substrings). A barra de busca tem acesso ao banco de dados para realizar suas funções, mas por conta disso não é capaz de reconhecer caracteres especiais como letras acentuadas.
