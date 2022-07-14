@@ -50,8 +50,8 @@ Vinicius Finke Raiter José - 9791052
 3. Quantidade em estoque;
 4. Unidade;
 5. Valor de desconto;
-6. Categorias;
-7. Tags;
+6. Categorias: determinam o tipo de produto (perecível, não perecível, higiene, limpeza);
+7. Tags: servem para agrupar produtos de diferentes formas (saudáveis, para o dia-a-dia, frutas, frios, etc.);
 
 # 2. Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
