@@ -8,8 +8,18 @@ import './LoginPopUp.css';
 
 const Login = ({ setOpen }) => {
     const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
+    const [signUp, setSignUp] = useState(false)
     const { setToken } = useContext(UserContext)
     const formRef = useRef()
+
+    const [signUpInfoName, setSignUpInfoName] = useState('')
+    const [signUpInfoEmail, setSignUpInfoEmail] = useState('')
+    const [signUpInfoPassword, setSignUpInfoPassword] = useState('')
+    const [signUpInfoAddressStreet, setSignUpInfoAddressStreet] = useState('')
+    const [signUpInfoAddressHouseNumber, setSignUpInfoAddressHouseNumber] = useState('')
+    const [signUpInfoAddressCity, setSignUpInfoAddressCity] = useState('')
+    const [signUpInfoAddressState, setSignUpInfoAddressState] = useState('')
+    const [signUpInfoAddressZipCode, setSignUpInfoAddressZipCode] = useState('')
 
     const onChangeEmail = (e) => {
         setLoginInfo({
@@ -25,7 +35,7 @@ const Login = ({ setOpen }) => {
         })
     }
 
-    const onSubmit = async (e) => {
+    const onLoginSubmit = async (e) => {
         e.preventDefault()
 
         if (loginInfo.email === '' || loginInfo.password === '') {
@@ -39,10 +49,66 @@ const Login = ({ setOpen }) => {
             alert('Logado com sucesso')
             setOpen(false)
         } catch (err) {
-            if (err.response.status === 404) {
+            if (err.response.status === 403 || err.response.status === 404) {
                 return alert('Usuário e/ou senha inválido(s)')
             }
             alert(err)
+        }
+    }
+
+    const validateFormEmptyFields = function(data) {
+        let valid = true
+
+        Object.values(data).forEach(d1 => {
+            if (d1 && typeof d1 === 'object') {
+                Object.values(d1).forEach(d2 => {
+                    if (d2 === '') {
+                        valid = false
+                        return
+                    }
+                })
+            }
+
+            if (d1 === '') {
+                console.log('d1 empty')
+                valid = false
+                return
+            }
+        })
+
+        return valid
+    }
+
+    const onSignUpSubmit = async (e) => {
+        e.preventDefault()
+
+        const signUpInfo = {
+            name: signUpInfoName.trim(),
+            email: signUpInfoEmail.trim(),
+            password: signUpInfoPassword.trim(),
+            address: {
+                street: signUpInfoAddressStreet.trim(),
+                houseNumber: signUpInfoAddressHouseNumber,
+                city: signUpInfoAddressCity.trim(),
+                state: signUpInfoAddressState.trim(),
+                zipCode: signUpInfoAddressZipCode.trim()
+            },
+            role: 'customer'
+        }
+
+        if (!validateFormEmptyFields(signUpInfo)) {
+            return alert('Por favor, preencha todos os dados')
+        }
+
+        try {
+            await api.signUp(signUpInfo)
+            alert('Usuário registrado com sucesso. Tente fazer o login')
+            setSignUp(false)
+        } catch (err) {
+            if (err.response.status === 400) {
+                return alert('O e-mail fornecido já está em uso')
+            }
+            alert('Erro: falha no registro.' + err)
         }
     }
 
@@ -58,25 +124,73 @@ const Login = ({ setOpen }) => {
     }, [])
 
     return (
-        <PopUp title='Entrar' setOpen={setOpen}>
+        <PopUp title={`${signUp ? 'Cadastrar-se' : 'Entrar'}`} setOpen={setOpen}>
+            {signUp ?
+            (
             <div className='LoginPopUp'>
-                <form onSubmit={onSubmit} ref={formRef}>
+            <form onSubmit={onSignUpSubmit} ref={formRef}>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='name'>Nome</label>
+                    <input id='name' type='text' name='name' autoComplete='off' value={signUpInfoName} onChange={e => setSignUpInfoName(e.target.value)} autoFocus/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='email'>E-mail</label>
+                    <input id='email' type='email' name='email' autoComplete='off' value={signUpInfoEmail} onChange={e => setSignUpInfoEmail(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='password'>Senha</label>
+                    <input id='password' type='password' name='password' autoComplete='off' value={signUpInfoPassword} onChange={e => setSignUpInfoPassword(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='addressStreet'>Enredeço</label>
+                    <input id='addressStreet' type='text' name='addressStreet' autoComplete='off' value={signUpInfoAddressStreet} onChange={e => setSignUpInfoAddressStreet(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='addressHouseNumber'>Número</label>
+                    <input id='addressHouseNumber' type='number' name='addressHouseNumber' autoComplete='off' value={signUpInfoAddressHouseNumber} onChange={e => setSignUpInfoAddressHouseNumber(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='addressCity'>Cidade</label>
+                    <input id='addressCity' type='text' name='addressCity' autoComplete='off' value={signUpInfoAddressCity} onChange={e => setSignUpInfoAddressCity(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='addressState'>Estado</label>
+                    <input id='addressState' type='text' name='addressState' autoComplete='off' value={signUpInfoAddressState} onChange={e => setSignUpInfoAddressState(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item'>
+                    <label htmlFor='addressZipCode'>CEP</label>
+                    <input id='addressZipCode' type='text' name='addressZipCode' autoComplete='off' value={signUpInfoAddressZipCode} onChange={e => setSignUpInfoAddressZipCode(e.target.value)}/>
+                </div>
+                <div className='LoginPopUp-form-item LoginPopUp-button'>
+                    <Button text='Cadastrar' size='fit' action={onSignUpSubmit} />
+                </div>
+                <div className='LoginPopUp-form-item LoginPopUp-signup'>
+                    Já tem uma conta? <em onClick={(e) => setSignUp(false)}> Entre aqui </em>
+                </div>
+            </form>
+            </div>
+            )
+            :
+            (
+            <div className='LoginPopUp'>
+                <form onSubmit={onLoginSubmit} ref={formRef}>
                     <div className='LoginPopUp-form-item'>
                         <label htmlFor='email'>E-mail</label>
-                        <input id='email' type='email' name='email' autoComplete='off' value={loginInfo.email} onChange={onChangeEmail} />
+                        <input id='email' type='email' name='email' autoComplete='off' value={loginInfo.email} onChange={onChangeEmail} autoFocus/>
                     </div>
                     <div className='LoginPopUp-form-item'>
                         <label htmlFor='password'>Senha</label>
-                        <input id='password' type='password' name='password' autoComplete='off' value={loginInfo.password} onChange={onChangePassword} />
+                        <input id='password' type='password' name='password' autoComplete='off' value={loginInfo.password} onChange={onChangePassword}/>
                     </div>
                     <div className='LoginPopUp-form-item LoginPopUp-button'>
-                        <Button text='Entrar' size='fit' action={onSubmit} />
+                        <Button text='Entrar' size='fit' action={onLoginSubmit} />
                     </div>
                     <div className='LoginPopUp-form-item LoginPopUp-signup'>
-                        Ainda não tem uma conta? <em> Cadastre-se agora </em>
+                        Ainda não tem uma conta? <em onClick={(e) => setSignUp(true)}> Cadastre-se agora </em>
                     </div>
                 </form>
             </div>
+            )}
         </PopUp>
     );
 }

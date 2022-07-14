@@ -58,4 +58,13 @@ api.login = async (email, password) => {
     }
 }
 
+api.signUp = async ({ name, email, password, address, role }) => {
+    try {
+        const res = await axios.post(`${url}/users`, { name, email, password, address, role })
+        return await res.data
+    } catch (err) {
+        throw err
+    }
+}
+
 export default api;
