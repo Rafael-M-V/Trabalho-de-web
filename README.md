@@ -52,16 +52,16 @@ Vinicius Finke Raiter José - 9791052
 7. Tags: servem para agrupar produtos de diferentes formas (saudáveis, para o dia-a-dia, frutas, frios, etc.);
 
 # 2. Organização do código
-O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
+O código se encontra na pasta `src` do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
   - `generic`: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
   - `header`: apresenta o cabeçalho da página;
-  - `page`: apresenta um container de página vazio (Page.js) e uma página que mostra os resultados de uma busca (SearchResults.js);
+  - `page`: apresenta um container de página vazio (`Page.js`) e uma página que mostra os resultados de uma busca (`SearchResults.js`);
   - `product`: contém a implementação de apresentação de um produto (a apresentação de um produto, funcionalidade de adicionar ao carrinho, sua janela de pop-up e a funcionalidade de mapear produtos em seções de acordo com características em comum);
   - `serchbar`: contém a implementação da barra de busca;
   - `sidebar`: contém a implementação da barra lateral, usada para navegar entre as categorias de produtos;
   - `user-area`: contém área de login/cadastro, botão de carrinho, e, se usuário estiver logado, as opções de menu que mostra compras anteriores, formas de pagamento, finalizar compra, opção de sair; 
 
-Existe uma pasta "server" contendo as funcionalidades necessárias para a criação e execução do MongoDB, utilizamos a arquitetura MVC Web e temos uma distinção interna dentro dessa pasta sendo:
+Existe uma pasta `server` contendo as funcionalidades necessárias para a criação e execução do MongoDB, utilizamos a arquitetura MVC Web e temos uma distinção interna dentro dessa pasta sendo:
   - `Controllers`: controladoras contendo as funções que são executadas dentro do banco, como buscas, adições e remoções;
   - `Models`: pasta que possui os esquemas de dados de produtos e usuários;
   - `Routes`: contém as rotas que serão utilizadas para operações internas de clientes e produtos, que executam as chamadas de acordo;
