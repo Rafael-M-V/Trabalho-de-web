@@ -53,26 +53,26 @@ Vinicius Finke Raiter José - 9791052
 
 # 2. Organização do código
 O código se encontra na pasta "src" do projeto. Dentro desta pasta está a pasta components com as seguintes pastas:
-  - generic: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
-  - header: apresenta o cabeçalho da página;
-  - page: apresenta um container de página vazio (Page.js) e uma página que mostra os resultados de uma busca (SearchResults.js);
-  - product: contém a implementação de apresentação de um produto (a apresentação de um produto, funcionalidade de adicionar ao carrinho, sua janela de pop-up e a funcionalidade de mapear produtos em seções de acordo com características em comum);
-  - serchbar: contém a implementação da barra de busca;
-  - sidebar: contém a implementação da barra lateral, usada para navegar entre as categorias de produtos;
-  - user-area: contém área de login/cadastro, botão de carrinho, e, se usuário estiver logado, as opções de menu que mostra compras anteriores, formas de pagamento, finalizar compra, opção de sair; 
+  - `generic`: apresenta as funcionalidades genéricas que são usadas constantemente no projeto, como botões, janelas de pop-up, etc.);
+  - `header`: apresenta o cabeçalho da página;
+  - `page`: apresenta um container de página vazio (Page.js) e uma página que mostra os resultados de uma busca (SearchResults.js);
+  - `product`: contém a implementação de apresentação de um produto (a apresentação de um produto, funcionalidade de adicionar ao carrinho, sua janela de pop-up e a funcionalidade de mapear produtos em seções de acordo com características em comum);
+  - `serchbar`: contém a implementação da barra de busca;
+  - `sidebar`: contém a implementação da barra lateral, usada para navegar entre as categorias de produtos;
+  - `user-area`: contém área de login/cadastro, botão de carrinho, e, se usuário estiver logado, as opções de menu que mostra compras anteriores, formas de pagamento, finalizar compra, opção de sair; 
 
 Existe uma pasta "server" contendo as funcionalidades necessárias para a criação e execução do MongoDB, utilizamos a arquitetura MVC Web e temos uma distinção interna dentro dessa pasta sendo:
-  - Controllers: controladoras contendo as funções que são executadas dentro do banco, como buscas, adições e remoções;
-  - Models: pasta que possui os esquemas de dados de produtos e usuários;
-  - Routes: contém as rotas que serão utilizadas para operações internas de clientes e produtos, que executam as chamadas de acordo;
+  - `Controllers`: controladoras contendo as funções que são executadas dentro do banco, como buscas, adições e remoções;
+  - `Models`: pasta que possui os esquemas de dados de produtos e usuários;
+  - `Routes`: contém as rotas que serão utilizadas para operações internas de clientes e produtos, que executam as chamadas de acordo;
 
-Dentro da pasta src está a "raiz" da página (App.js), os dados dos produtos que estarão a venda podem vir de dois locais, pelo banco de dados ou em uma versão local em `ProductsData.js`.
+Dentro da pasta src está a "raiz" da página (`App.js`), os dados dos produtos que estarão a venda podem vir de dois locais, pelo banco de dados ou em uma versão local em `ProductsData.js`.
 
 # 3. Procedimentos de execução
 ## 3.1. Pré-requisitos
   - Node.js (>=16.15.1);
   - npm (>=8.5.5);
-  - Arquivo .env presente na pasta server;
+  - Arquivo `.env` presente na pasta server;
 
 ## 3.2. No terminal
 - Navegue até a pasta do projeto;
