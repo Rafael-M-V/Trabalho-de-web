@@ -8,9 +8,27 @@ export const findById = async (req, res) => {
     if (req.params.id === '') {
         return res.status(404).send(errMsg.NO_KEY);
     }
+
+    if (req.user.role !== auth.permissions.admin && req.user._id !== req.params._id) {
+        return res.status(403).send(errMsg.FORBIDDEN);
+    }
     
     try {
         const user = await User.findOne({ _id: req.params.id }).orFail().exec();
+        res.status(200).send(user);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(errMsg.NOT_FOUND);
+    }
+}
+
+export const findMe = async (req, res) => {
+    if (req.user._id === '') {
+        return res.status(404).send(errMsg.NO_KEY);
+    }
+    
+    try {
+        const user = await User.findOne({ _id: req.user._id }).orFail().exec();
         res.status(200).send(user);
     } catch (err) {
         console.log(err);

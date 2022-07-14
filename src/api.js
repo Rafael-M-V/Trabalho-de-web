@@ -49,6 +49,29 @@ api.searchProducts = async (name) => {
     }
 }
 
+api.getUserData = async (id, token) => {
+    try {
+        const res = await axios.get(`${url}/users/${id}`)
+        return await res.data
+    } catch (err) {
+        throw err
+    }
+}
+
+api.getUserData = async (token) => {
+    try {
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+        const res = await axios.get(`${url}/users/me`, config)
+        return await res.data
+    } catch (err) {
+        throw err
+    }
+}
+
 api.login = async (email, password) => {
     try {
         const res = await axios.post(`${url}/users/login`, { email, password })

@@ -1,44 +1,5 @@
 @import '/src/Global.css';
 
-.LoginPopUp {
-    width: 25vw;
-    box-sizing: border-box;
-    color: var(--neutral-color);
-}
-
-.LoginPopUp-form-item {
-    margin-bottom: 20px;
-}
-
-.LoginPopUp-form-item:last-child {
-    margin-bottom: 0;
-}
-
-.LoginPopUp label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.LoginPopUp input {
-    height: 40px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
-    border: 1px solid var(--bg-color-darkest);
-    outline: none;
-    border-radius: 5px;
-    color: var(--neutral-color);
-    background-color: var(--bg-color-lightest);
-}
-
-.LoginPopUp-button {
-    height: 40px;
-}
-
-.LoginPopUp-signup {
-    color: var(--neutral-color-lighter);
-}
-
 .LoginPopUp-signup em {
     color: var(--primary-color);
     cursor: pointer;

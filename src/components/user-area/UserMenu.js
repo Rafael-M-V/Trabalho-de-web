@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import FloatingBox from '../generic/FloatingBox';
 import ListView from '../generic/ListView';
-import PopUp from '../generic/PopUp';
 import UserContext from '../../context/user/UserContext';
+import UserData from './UserData';
 
 import './UserMenu.css';
 
@@ -13,16 +13,8 @@ const UserMenu = ({ setOpen }) => {
 
     const popUps = [
         {
-            title: 'Minhas compras',
-            popUp: <PopUp title={'Minhas compras'} setOpen={setOpenPopUp}>Suas compras</PopUp>
-        },
-        {
             title: 'Meus dados',
-            popUp: <PopUp title={'Meus dados'} setOpen={setOpenPopUp}>Seus dados</PopUp>
-        },
-        {
-            title: 'Meus meios de pagamento',
-            popUp: <PopUp title={'Meus meios de pagamento'} setOpen={setOpenPopUp}>Seus meios de pagamento</PopUp>
+            popUp: <UserData setOpen={setOpenPopUp} />
         }
     ]
 

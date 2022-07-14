@@ -8,7 +8,6 @@ import { OnSale, Perishable, NonPerishable, Cleaning, Hygiene } from './Pages';
 
 import SearchResults from './components/page/SearchResults';
 import SearchBar from './components/searchbar/SearchBar';
-import api from './api';
 
 import UserProvider from './context/user/UserProvider';
 
@@ -18,7 +17,7 @@ const App = () => {
     const [searchResults, setSearchResults] = useState(null)
     const [searchTerm, setSearchTerm] = useState('')
     const searchResultsPage = <SearchResults searchTerm={searchTerm}>{searchResults}</SearchResults>
-    
+
     // useEffect(() => {
     //     localStorage.setItem('cart', '[]')
     // }, [])

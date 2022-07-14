@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import GridView from './components/generic/GridView';
 import { mapProduct } from './components/product/Product';
-import Section from './components/product/Section';
-import sections from './ProductsData';
+// import Section from './components/product/Section';
+// import sections from './ProductsData';
 import api from './api';
 
 export const OnSale = () => {
@@ -25,7 +25,6 @@ export const Perishable = () => {
             try {
                 const products = await api.getProductsByCategories(['perishable'])
                 setSectionProducts(await products)
-                console.log(await products)
             } catch (err) {
                 console.log(err)
             }

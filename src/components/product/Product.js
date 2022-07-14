@@ -26,7 +26,7 @@ const Product = ({ ...props }) => {
 
         if (localCart && localCart.length > 0) {
             const newCart = [...localCart]
-            const item = newCart.find(item => item.id === id)
+            const item = newCart.find(item => item._id === id)
             if (item) {
                 setCartAmount(item.amount)
             } else {
@@ -52,7 +52,7 @@ const Product = ({ ...props }) => {
         if (localCart) {
             let newCart = [...localCart]
 
-            let product = newCart.find(item => item.id === id)
+            let product = newCart.find(item => item._id === id)
 
             if (product) {
                 product.amount = cartAmount

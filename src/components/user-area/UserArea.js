@@ -24,7 +24,8 @@ const UserArea = () => {
 
     return (
         <div className='UserArea'>
-            <span className={`UserArea-item ${openCart ? 'UserArea-item-show' : ''}`} onClick={() => setOpenCart(true)}>
+            {/* <span className={`UserArea-item ${openCart ? 'UserArea-item-show' : ''}`} onClick={() => setOpenCart(true)}> */}
+            <span className={`UserArea-item ${openCart ? 'UserArea-item-show' : ''}`}>
                 <IconButton>
                     <CartIcon />
                 </IconButton>

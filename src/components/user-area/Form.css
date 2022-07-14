@@ -1,0 +1,40 @@
+@import '/src/Global.css';
+
+.Form {
+    width: 25vw;
+    box-sizing: border-box;
+    color: var(--neutral-color);
+}
+
+.Form-item {
+    margin-bottom: 20px;
+}
+
+.Form-item:last-child {
+    margin-bottom: 0;
+}
+
+.Form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.Form input {
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid var(--bg-color-darkest);
+    outline: none;
+    border-radius: 5px;
+    color: var(--neutral-color);
+    background-color: var(--bg-color-lightest);
+}
+
+.Form-button {
+    height: 40px;
+}
+
+.Form-signup {
+    color: var(--neutral-color-lighter);
+}

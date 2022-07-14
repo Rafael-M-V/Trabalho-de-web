@@ -4,6 +4,7 @@ import PopUp from '../generic/PopUp';
 import UserContext from '../../context/user/UserContext';
 import api from '../../api';
 
+import './Form.css'
 import './LoginPopUp.css';
 
 const Login = ({ setOpen }) => {
@@ -43,7 +44,8 @@ const Login = ({ setOpen }) => {
         }
 
         try {
-            const token = await api.login(loginInfo.email, loginInfo.password)
+            const { token } = await api.login(loginInfo.email, loginInfo.password)
+            // console.log(token)
             setToken(token)
             localStorage.setItem('acessToken', token)
             alert('Logado com sucesso')
@@ -127,65 +129,65 @@ const Login = ({ setOpen }) => {
         <PopUp title={`${signUp ? 'Cadastrar-se' : 'Entrar'}`} setOpen={setOpen}>
             {signUp ?
             (
-            <div className='LoginPopUp'>
-            <form onSubmit={onSignUpSubmit} ref={formRef}>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='name'>Nome</label>
-                    <input id='name' type='text' name='name' autoComplete='off' value={signUpInfoName} onChange={e => setSignUpInfoName(e.target.value)} autoFocus/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='email'>E-mail</label>
-                    <input id='email' type='email' name='email' autoComplete='off' value={signUpInfoEmail} onChange={e => setSignUpInfoEmail(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='password'>Senha</label>
-                    <input id='password' type='password' name='password' autoComplete='off' value={signUpInfoPassword} onChange={e => setSignUpInfoPassword(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='addressStreet'>Enredeço</label>
-                    <input id='addressStreet' type='text' name='addressStreet' autoComplete='off' value={signUpInfoAddressStreet} onChange={e => setSignUpInfoAddressStreet(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='addressHouseNumber'>Número</label>
-                    <input id='addressHouseNumber' type='number' name='addressHouseNumber' autoComplete='off' value={signUpInfoAddressHouseNumber} onChange={e => setSignUpInfoAddressHouseNumber(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='addressCity'>Cidade</label>
-                    <input id='addressCity' type='text' name='addressCity' autoComplete='off' value={signUpInfoAddressCity} onChange={e => setSignUpInfoAddressCity(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='addressState'>Estado</label>
-                    <input id='addressState' type='text' name='addressState' autoComplete='off' value={signUpInfoAddressState} onChange={e => setSignUpInfoAddressState(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item'>
-                    <label htmlFor='addressZipCode'>CEP</label>
-                    <input id='addressZipCode' type='text' name='addressZipCode' autoComplete='off' value={signUpInfoAddressZipCode} onChange={e => setSignUpInfoAddressZipCode(e.target.value)}/>
-                </div>
-                <div className='LoginPopUp-form-item LoginPopUp-button'>
-                    <Button text='Cadastrar' size='fit' action={onSignUpSubmit} />
-                </div>
-                <div className='LoginPopUp-form-item LoginPopUp-signup'>
-                    Já tem uma conta? <em onClick={(e) => setSignUp(false)}> Entre aqui </em>
-                </div>
-            </form>
+            <div className='LoginPopUp Form'>
+                <form onSubmit={onSignUpSubmit} ref={formRef}>
+                    <div className='Form-item'>
+                        <label htmlFor='name'>Nome</label>
+                        <input id='name' type='text' name='name' autoComplete='off' value={signUpInfoName} onChange={e => setSignUpInfoName(e.target.value)} autoFocus/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='email'>E-mail</label>
+                        <input id='email' type='email' name='email' autoComplete='off' value={signUpInfoEmail} onChange={e => setSignUpInfoEmail(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='password'>Senha</label>
+                        <input id='password' type='password' name='password' autoComplete='off' value={signUpInfoPassword} onChange={e => setSignUpInfoPassword(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='addressStreet'>Enredeço</label>
+                        <input id='addressStreet' type='text' name='addressStreet' autoComplete='off' value={signUpInfoAddressStreet} onChange={e => setSignUpInfoAddressStreet(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='addressHouseNumber'>Número</label>
+                        <input id='addressHouseNumber' type='number' name='addressHouseNumber' autoComplete='off' value={signUpInfoAddressHouseNumber} onChange={e => setSignUpInfoAddressHouseNumber(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='addressCity'>Cidade</label>
+                        <input id='addressCity' type='text' name='addressCity' autoComplete='off' value={signUpInfoAddressCity} onChange={e => setSignUpInfoAddressCity(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='addressState'>Estado</label>
+                        <input id='addressState' type='text' name='addressState' autoComplete='off' value={signUpInfoAddressState} onChange={e => setSignUpInfoAddressState(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='addressZipCode'>CEP</label>
+                        <input id='addressZipCode' type='text' name='addressZipCode' autoComplete='off' value={signUpInfoAddressZipCode} onChange={e => setSignUpInfoAddressZipCode(e.target.value)}/>
+                    </div>
+                    <div className='Form-item Form-button'>
+                        <Button text='Cadastrar' size='fit' action={onSignUpSubmit} />
+                    </div>
+                    <div className='Form-item LoginPopUp-signup'>
+                        Já tem uma conta? <em onClick={(e) => setSignUp(false)}> Entre aqui </em>
+                    </div>
+                </form>
             </div>
             )
             :
             (
-            <div className='LoginPopUp'>
+            <div className='LoginPopUp Form'>
                 <form onSubmit={onLoginSubmit} ref={formRef}>
-                    <div className='LoginPopUp-form-item'>
+                    <div className='Form-item'>
                         <label htmlFor='email'>E-mail</label>
                         <input id='email' type='email' name='email' autoComplete='off' value={loginInfo.email} onChange={onChangeEmail} autoFocus/>
                     </div>
-                    <div className='LoginPopUp-form-item'>
+                    <div className='Form-item'>
                         <label htmlFor='password'>Senha</label>
                         <input id='password' type='password' name='password' autoComplete='off' value={loginInfo.password} onChange={onChangePassword}/>
                     </div>
-                    <div className='LoginPopUp-form-item LoginPopUp-button'>
+                    <div className='Form-item Form-button'>
                         <Button text='Entrar' size='fit' action={onLoginSubmit} />
                     </div>
-                    <div className='LoginPopUp-form-item LoginPopUp-signup'>
+                    <div className='Form-item LoginPopUp-signup'>
                         Ainda não tem uma conta? <em onClick={(e) => setSignUp(true)}> Cadastre-se agora </em>
                     </div>
                 </form>
