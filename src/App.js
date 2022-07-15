@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './components/header/Header';
 import Sidebar from './components/sidebar/Sidebar';
@@ -8,7 +8,6 @@ import { OnSale, Perishable, NonPerishable, Cleaning, Hygiene } from './Pages';
 
 import SearchResults from './components/page/SearchResults';
 import SearchBar from './components/searchbar/SearchBar';
-import productsData from './ProductsData';
 
 import UserProvider from './context/user/UserProvider';
 
@@ -59,7 +58,7 @@ const App = () => {
         <UserProvider>
             <Header>
                 <h1>Mercado Feliz</h1>
-                <SearchBar items={productsData} setSearchTerm={setSearchTerm} setResults={setSearchResults} setCurrentPage={setCurrentPage}/>
+                <SearchBar setSearchTerm={setSearchTerm} setResults={setSearchResults} setCurrentPage={setCurrentPage}/>
             </Header>
             <div className='App-main-wrapper'>
                 <Sidebar>

@@ -15,6 +15,7 @@ auth.verify = (permission = 'customer') => {
             }
 
             const token = req.headers.authorization.split(' ')[1];
+            // console.log(token)
             const decode = jwt.verify(token, process.env['JWT_KEY']);
 
             if (decode.role !== 'admin') {
@@ -22,9 +23,6 @@ auth.verify = (permission = 'customer') => {
                     case 'admin':
                         return res.status(403).send(errMsg.FORBIDDEN);
                     case 'customer':
-                        if (decode._id !== req.params._id) {
-                            return res.status(403).send(errMsg.FORBIDDEN);
-                        }
                         break;
                 }
             }
@@ -32,6 +30,10 @@ auth.verify = (permission = 'customer') => {
             req.user = decode;
             next();
         } catch (err) {
+            if (permission === 'any') {
+                return next()
+            }
+            
             console.log(err);
             return res.status(401).send(errMsg.UNAUTHORIZED);
         }

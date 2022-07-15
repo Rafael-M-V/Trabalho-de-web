@@ -1,6 +1,7 @@
 import React from 'react';
 import IconButton from '../generic/IconButton';
-import Product, { mapProduct } from '../product/Product';
+import api from '../../api';
+import { mapProduct } from '../product/Product';
 
 import './SearchBar.css';
 import { ReactComponent as SearchIcon } from './icons/search.svg';
@@ -23,12 +24,23 @@ const SearchBar = ({ items, setSearchTerm, setResults, setCurrentPage, searchFor
         Product: 'Busque por produtos'
     }
 
-    const search = (e) => {
+    const search = async (e) => {
         if (e.key !== 'Enter' || e.target.value === '') return
 
+        const keyword = e.target.value
         setCurrentPage(0)
-        setSearchTerm(normalize(e.target.value))
-        setResults(items.map(p => maps[searchFor](p, e)))
+        setSearchTerm(keyword)
+
+        try {
+            const results = await api.searchProducts(keyword)
+            console.log(results)
+            setResults(results.map(mapProduct));
+        } catch (err) {
+            console.log(err);
+            setResults([]);
+        }
+
+        // setResults(items.map(p => maps[searchFor](p, e)))
     }
 
     return (

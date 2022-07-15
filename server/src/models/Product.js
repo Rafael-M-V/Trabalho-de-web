@@ -21,11 +21,11 @@ const productSchema = new mongoose.Schema({
     discount: Number,
     description: String,
     categories: {
-        type: Array,
+        type: [String],
         required: true
     },
     tags: {
-        type: Array,
+        type: [String],
         required: true
     }
 });
