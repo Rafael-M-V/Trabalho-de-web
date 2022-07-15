@@ -65,7 +65,15 @@ api.createProduct = async (product, token) => {
                 'Authorization': `Bearer ${token}`
             }
         }
-        return await axios.post(`${url}/products/`, { product }, config)
+       
+        const fd = new FormData();
+
+        for (const key in product) {
+            const value = Array.isArray(product[key]) ? JSON.stringify(product[key]) : product[key]
+            fd.append(key, value)
+        }
+
+        return await axios.post(`${url}/products/`, fd, config)
     } catch (err) {
         throw err
     }

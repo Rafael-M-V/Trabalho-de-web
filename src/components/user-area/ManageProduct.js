@@ -13,7 +13,9 @@ const ManageProduct = ({ setOpen }) => {
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(0)
+    const [unit, setUnit] = useState('un')
     const [discount, setDiscount] = useState(0)
+    const [stockAmount, setStockAmount] = useState(0)
     const [tags, setTags] = useState('')
     const [categories, setCategories] = useState([])
 
@@ -26,6 +28,8 @@ const ManageProduct = ({ setOpen }) => {
         setDescription(product.description)
         setPrice(product.price)
         setDiscount(product.discount)
+        setUnit(product.unit)
+        setStockAmount(product.stockAmount)
         setTags(product.tags.join(', '))
         setCategories(product.categories)
     }
@@ -36,7 +40,9 @@ const ManageProduct = ({ setOpen }) => {
             newImage: newImage,
             description: description,
             price: price,
-            tags: tags,
+            unit: unit,
+            stockAmount: stockAmount,
+            tags: tags.split(','),
             categories: JSON.stringify(categories)
         }
 
@@ -70,7 +76,11 @@ const ManageProduct = ({ setOpen }) => {
 
         try {
             const product = buildCurrentProduct()
-            await api.updateProduct(id, product, token)
+            if (insert) {
+                await api.createProduct(product, token)
+            } else {
+                await api.updateProduct(id, product, token)
+            }
             alert(`Produto ${insert ? 'inserido' : 'atualizado'} com sucesso`)
         } catch (err) {
             console.log(err)
@@ -132,8 +142,16 @@ const ManageProduct = ({ setOpen }) => {
                         <input id='price' type='number' min="0" name='price' autoComplete='off' value={price} onChange={e => setPrice(e.target.value)}/>
                     </div>
                     <div className='Form-item'>
+                        <label htmlFor='unit'>Unidade</label>
+                        <input id='unit' type='text' name='unit' autoComplete='off' value={unit} onChange={e => setUnit(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
                         <label htmlFor='discount'>Desconto</label>
                         <input id='discount' type='number' step=".1" name='discount' autoComplete='off' value={discount} onChange={e => setDiscount(e.target.value)}/>
+                    </div>
+                    <div className='Form-item'>
+                        <label htmlFor='stockAmount'>Quantidade em estoque</label>
+                        <input id='stockAmount' type='number' min="0" name='stockAmount' autoComplete='off' value={stockAmount} onChange={e => setStockAmount(e.target.value)}/>
                     </div>
                     <div className='Form-item'>
                         <label htmlFor='categories'>Categorias</label><br/>
