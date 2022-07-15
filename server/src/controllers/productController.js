@@ -15,10 +15,43 @@ export const findById = async (req, res) => {
     }
 }
 
-export const findLast = async (req, res) => {
+export const findByName = async (req, res) => {
+    if (req.body.name === '') {
+        return res.status(404).send(errMsg.NO_KEY);
+    }
+
     try {
-        const products = await Product.find().sort({ field: 'asc', _id: -1 }).limit(1).orFail().exec();
-        res.status(200).send(products[0]);
+        const product = await Product.find({ name: new RegExp(req.body.name, 'i') }).orFail().exec();
+        console.log('searching for', req.body.name);
+        res.status(200).send(product);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(errMsg.NOT_FOUND);
+    }
+}
+
+export const findByTags = async (req, res) => {
+    if (req.body.tags === '') {
+        return res.status(404).send(errMsg.NO_KEY);
+    }
+    
+    try {
+        const product = await Product.find({ tags: { $in: req.body.tags } }).orFail().exec();
+        res.status(200).send(product);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(errMsg.NOT_FOUND);
+    }
+}
+
+export const findByCategories = async (req, res) => {
+    if (req.body.categories === '') {
+        return res.status(404).send(errMsg.NO_KEY);
+    }
+    
+    try {
+        const product = await Product.find({ categories: { $in: req.body.categories } }).orFail().exec();
+        res.status(200).send(product);
     } catch (err) {
         console.log(err);
         res.status(404).send(errMsg.NOT_FOUND);
@@ -35,6 +68,16 @@ export const findAll = async (req, res) => {
     }
 }
 
+export const findOnSale = async (req, res) => {
+    try {
+        const products = await Product.find({ discount: { $gt: 0 } }).sort({ discount: 'desc' }).orFail().exec();
+        res.status(200).send(products);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(errMsg.NOT_FOUND);
+    }
+}
+
 export const create = async (req, res) => {
     const product = req.body;
     delete product._id;
@@ -44,7 +87,7 @@ export const create = async (req, res) => {
     }
     
     if (req.body.tags) {
-        product.tags = req.body.tags.split(',').map(p => p.trim());
+        product.tags = JSON.parse(req.body.tags);
     }
 
     if (req.file && typeof req.file !== 'undefined') {
@@ -66,6 +109,7 @@ export const update = async (req, res) => {
     }
 
     const product = req.body;
+    console.log(req.body)
 
     if (req.body.categories) {
         product.categories = JSON.parse(req.body.categories);

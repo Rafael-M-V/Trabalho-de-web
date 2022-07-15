@@ -8,7 +8,7 @@ import { ReactComponent as AddSign} from './icons/add-sign.svg';
 
 export const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
 
-export const mapProduct = p => <Product key={p.id} id={p.id} name={p.name} image={p.image} price={p.price} discount={p.discount}/>
+export const mapProduct = (p) => <Product key={p._id} id={p._id} name={p.name} image={p.image} price={p.price} discount={p.discount}/>
 
 const Product = ({ ...props }) => {
     const id = props.id
@@ -26,7 +26,7 @@ const Product = ({ ...props }) => {
 
         if (localCart && localCart.length > 0) {
             const newCart = [...localCart]
-            const item = newCart.find(item => item.id === id)
+            const item = newCart.find(item => item._id === id)
             if (item) {
                 setCartAmount(item.amount)
             } else {
@@ -52,7 +52,7 @@ const Product = ({ ...props }) => {
         if (localCart) {
             let newCart = [...localCart]
 
-            let product = newCart.find(item => item.id === id)
+            let product = newCart.find(item => item._id === id)
 
             if (product) {
                 product.amount = cartAmount

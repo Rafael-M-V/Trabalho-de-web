@@ -8,9 +8,27 @@ export const findById = async (req, res) => {
     if (req.params.id === '') {
         return res.status(404).send(errMsg.NO_KEY);
     }
+
+    if (req.user.role !== auth.permissions.admin && req.user._id !== req.params._id) {
+        return res.status(403).send(errMsg.FORBIDDEN);
+    }
     
     try {
         const user = await User.findOne({ _id: req.params.id }).orFail().exec();
+        res.status(200).send(user);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(errMsg.NOT_FOUND);
+    }
+}
+
+export const findMe = async (req, res) => {
+    if (req.user._id === '') {
+        return res.status(404).send(errMsg.NO_KEY);
+    }
+    
+    try {
+        const user = await User.findOne({ _id: req.user._id }).orFail().exec();
         res.status(200).send(user);
     } catch (err) {
         console.log(err);
@@ -32,7 +50,7 @@ export const create = async (req, res) => {
     const user = req.body;
     delete user._id;
 
-    if (req.user.role !== auth.permissions.admin && req.body.role === auth.permissions.admin) {
+    if (req.body.role === auth.permissions.admin && (!req.user.role || req.user.role !== auth.permissions.admin)) {
         return res.status(403).send(errMsg.FORBIDDEN);
     }
     
@@ -93,7 +111,7 @@ export const login = async (req, res) => {
         const user = await User.findOne({ email: email }).orFail().exec();
         if (await bcrypt.compare(password, user.password)) {
             const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, process.env['JWT_KEY'], { expiresIn: '1h' });
-            res.status(200).send({ token: token });
+            res.status(200).send({ token: token, role: user.role });
         } else {
             throw new Error();
         }

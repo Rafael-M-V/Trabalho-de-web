@@ -4,6 +4,7 @@ import auth from '../middleware/auth.js';
 
 const router = express.Router();
 
+router.get('/me', auth.verify(auth.permissions.customer), userController.findMe);
 router.get('/:id', auth.verify(auth.permissions.customer), userController.findById);
 router.get('/', auth.verify(auth.permissions.admin), userController.findAll);
 router.put('/:id', auth.verify(auth.permissions.customer), userController.update);
