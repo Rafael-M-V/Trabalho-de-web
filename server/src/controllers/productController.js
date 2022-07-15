@@ -22,7 +22,7 @@ export const findByName = async (req, res) => {
 
     try {
         const product = await Product.find({ name: new RegExp(req.body.name, 'i') }).orFail().exec();
-        console.log('p', product);
+        console.log('searching for', req.body.name);
         res.status(200).send(product);
     } catch (err) {
         console.log(err);
@@ -109,6 +109,7 @@ export const update = async (req, res) => {
     }
 
     const product = req.body;
+    console.log(req.body)
 
     if (req.body.categories) {
         product.categories = JSON.parse(req.body.categories);

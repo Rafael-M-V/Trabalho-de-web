@@ -111,7 +111,7 @@ export const login = async (req, res) => {
         const user = await User.findOne({ email: email }).orFail().exec();
         if (await bcrypt.compare(password, user.password)) {
             const token = jwt.sign({ _id: user._id, email: user.email, role: user.role }, process.env['JWT_KEY'], { expiresIn: '1h' });
-            res.status(200).send({ token: token });
+            res.status(200).send({ token: token, role: user.role });
         } else {
             throw new Error();
         }

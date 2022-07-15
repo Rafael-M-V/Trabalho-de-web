@@ -4,6 +4,15 @@ const url = 'http://localhost:3008/api';
 
 const api = {};
 
+api.getProductById = async (id) => {
+    try {
+        const res = await axios.get(`${url}/products/${id}`)
+        return res.data
+    } catch (err) {
+        throw err
+    }
+}
+
 api.getProducts = async () => {
     try {
         const res = await axios.get(`${url}/products`)
@@ -44,6 +53,53 @@ api.searchProducts = async (name) => {
     try {
         const res = await axios.post(`${url}/products/search`, { name: name })
         return await res.data
+    } catch (err) {
+        throw err
+    }
+}
+
+api.createProduct = async (product, token) => {
+    try {
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+        return await axios.post(`${url}/products/`, { product }, config)
+    } catch (err) {
+        throw err
+    }
+}
+
+api.updateProduct = async (id, product, token) => {
+    try {
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+
+        const fd = new FormData();
+
+        for (const key in product) {
+            const value = Array.isArray(product[key]) ? JSON.stringify(product[key]) : product[key]
+            fd.append(key, value)
+        }
+
+        return await axios.put(`${url}/products/${id}`, fd, config)
+    } catch (err) {
+        throw err
+    }
+}
+
+api.removeProduct = async (id, token) => {
+    try {
+        const config = {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }
+        return await axios.delete(`${url}/products/${id}`, config)
     } catch (err) {
         throw err
     }

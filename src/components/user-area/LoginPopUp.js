@@ -10,7 +10,7 @@ import './LoginPopUp.css';
 const Login = ({ setOpen }) => {
     const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
     const [signUp, setSignUp] = useState(false)
-    const { setToken } = useContext(UserContext)
+    const { setToken, setRole } = useContext(UserContext)
     const formRef = useRef()
 
     const [signUpInfoName, setSignUpInfoName] = useState('')
@@ -44,9 +44,9 @@ const Login = ({ setOpen }) => {
         }
 
         try {
-            const { token } = await api.login(loginInfo.email, loginInfo.password)
-            // console.log(token)
+            const { token, role } = await api.login(loginInfo.email, loginInfo.password)
             setToken(token)
+            setRole(role)
             localStorage.setItem('acessToken', token)
             alert('Logado com sucesso')
             setOpen(false)
