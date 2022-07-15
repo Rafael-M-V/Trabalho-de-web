@@ -67,6 +67,9 @@ Existe uma pasta `server` contendo as funcionalidades necessárias para a criaç
   - `Routes`: contém as rotas que serão utilizadas para operações internas de clientes e produtos, que executam as chamadas de acordo;
 
 Dentro da pasta src está a "raiz" da página (`App.js`), os dados dos produtos que estarão a venda podem vir de dois locais, pelo banco de dados ou em uma versão local em `ProductsData.js`.
+Avisos:
+- 1: as imagens upadas não funcionarão em ambiente de desenvolvimento
+- 2: a busca por id tem precedência em relação à busca por nome, então deve-se apagar o id para se buscar por nome
 
 # 3. Procedimentos de execução
 ## 3.1. Pré-requisitos
